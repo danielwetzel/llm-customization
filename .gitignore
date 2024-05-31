@@ -2,3 +2,5 @@
 emissions.csv
 meta-llama/*
 test_1_meta-llama/*
+get_tokens.py
+__pycache__/*
