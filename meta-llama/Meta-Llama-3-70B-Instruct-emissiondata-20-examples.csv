@@ -1,0 +1,12 @@
+Metric,Value
+Runs,5
+Words per Run,50
+Total Prompts,250
+Total Input Tokens,115415
+Avg Input Tokens per Prompt,461.66
+Total Output Tokens,4700
+Avg Output Tokens per Prompt,18.8
+Total Emissions (kg CO₂eq),0.14
+Emissions per Million Input Tokens (kg CO₂eq),1.212
+Emissions per Million Output Tokens (kg CO₂eq),29.762
+Emissions per Thousand Prompts (kg CO₂eq),0.56
