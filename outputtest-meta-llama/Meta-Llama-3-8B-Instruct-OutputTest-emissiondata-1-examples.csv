@@ -4,9 +4,9 @@ Words per Run,50
 Total Prompts,150
 Total Input Tokens,27999
 Avg Input Tokens per Prompt,186.66
-Total Output Tokens,2709
-Avg Output Tokens per Prompt,18.06
-Total Emissions (kg CO₂eq),0.02
-Emissions per Million Input Tokens (kg CO₂eq),0.705
-Emissions per Million Output Tokens (kg CO₂eq),7.287
-Emissions per Thousand Prompts (kg CO₂eq),0.132
+Total Output Tokens,2704
+Avg Output Tokens per Prompt,18.027
+Total Emissions (kg CO₂eq),0.011
+Emissions per Million Input Tokens (kg CO₂eq),0.384
+Emissions per Million Output Tokens (kg CO₂eq),3.981
+Emissions per Thousand Prompts (kg CO₂eq),0.072
