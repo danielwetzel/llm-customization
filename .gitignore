@@ -4,3 +4,10 @@
 #test_1_meta-llama/*
 get_tokens.py
 __pycache__/*
+results/input_token_correlation.png
+results/input_token_correlation.svg
+results/output_token_correlation.png
+results/output_token_correlation.svg
+results/parameter-correlation.png
+results/parameter-correlation.svg
+.vscode/settings.json
