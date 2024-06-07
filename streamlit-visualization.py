@@ -34,6 +34,7 @@ def label_func(input):
         'actual_cpu_energy_per_10k_prompts': 'CPU Energy per 10,000 Prompts',
         'actual_gpu_energy_per_10k_prompts': 'GPU Energy per 10,000 Prompts',
         'actual_ram_energy_per_10k_prompts': 'RAM Energy per 10,000 Prompts',
+        'actual_emissions_per_1M_out_tok': 'Emissions per 1M Output Tokens',
     }
 
 
@@ -143,6 +144,9 @@ def create_reg_chart(df, test_type, metric='actual_emissions_per_10k_prompts',  
     elif test_type == 'Llama3 Params':
         x_title = 'Parameters (billions)'
         x_data = 'parameters'
+    elif test_type == 'framework_comp_vllm':
+        x_title = 'Parameters (billions)'
+        x_data = 'parameters'
 
 
     scatter_base = alt.Chart(chart_data).mark_circle(size=100).encode(
@@ -188,6 +192,7 @@ def overview_page(df):
     # Create charts for each test type
     stacked_charts = []
     stacked_df = df[df.num_examples != 90]
+    stacked_df = stacked_df[df.test_type != 'framework_comp_vllm']
     for test_type in stacked_df['test_type'].unique():
         stacked_charts.append(create_chart(stacked_df, test_type, metric=st.session_state.metric, remove_x_title=True))
 
@@ -235,7 +240,7 @@ def input_tok_page(df):
         st.write("")
         st.write("")
         st.write("")
-        st.session_state.degree_list[0] = st.selectbox("Polynomial Degree", [1, 2, 3, 4, 5], index=0)
+        st.session_state.degree_list[0] = st.selectbox("Polynomial Degree", [1, 2], index=0)
 
     with vis:
     
@@ -277,6 +282,33 @@ def params_page(df):
     st.write(params_df)
 
 
+def framework_page(df):
+
+    st.subheader("Inference Framework Impact")
+    st.write("This section visualizes the impact of the inference framework on a models emissions.")
+
+    df_framework_comp = df[df['model_type'].str.contains('bloomz')]
+    #df_framework_comp = df_framework_comp[df_framework_comp['model_type'] != 'bloomz-3b']
+
+    vis, select = st.columns([9, 1])
+
+    with select:
+
+        st.write("")
+        st.write("")
+        st.write("")
+        st.write("")
+        st.session_state.degree_list[0] = st.selectbox("Polynomial Degree", [1, 2, 3], index=0)
+
+    with vis:
+    
+        input_chart = create_reg_chart(df_framework_comp, test_type='framework_comp_vllm', metric='actual_emissions_per_1M_out_tok', degree_list=st.session_state.degree_list).properties(height=700)
+        st.altair_chart(input_chart, use_container_width=True, theme="streamlit")
+
+
+    st.write(df[df.test_type=='framework_comp_vllm'])
+
+
 def sidebar():
 
     metrics = ['actual_emissions_per_10k_prompts', 'actual_cpu_energy_per_10k_prompts', 'actual_gpu_energy_per_10k_prompts', 'actual_ram_energy_per_10k_prompts']
@@ -300,7 +332,7 @@ def main():
 
     sidebar()
 
-    overview, output_tok, input_tok, params = st.tabs(["Overview", "Output Token Impact", "Input Token Impact", "Model Parameter Impact"])
+    overview, output_tok, input_tok, params, frameworks = st.tabs(["Overview", "Output Token Impact", "Input Token Impact", "Model Parameter Impact", "Inference Framework Impact"])
 
 
     with overview:
@@ -328,6 +360,11 @@ def main():
 
 
         params_page(df)
+
+    
+    with frameworks: 
+
+        framework_page(df)
 
     
     
