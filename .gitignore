@@ -4,3 +4,4 @@
 #test_1_meta-llama/*
 get_tokens.py
 __pycache__/*
+wandb/*
