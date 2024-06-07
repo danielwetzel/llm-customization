@@ -5,3 +5,10 @@
 get_tokens.py
 __pycache__/*
 wandb/*
+results/input_token_correlation.png
+results/input_token_correlation.svg
+results/output_token_correlation.png
+results/output_token_correlation.svg
+results/parameter-correlation.png
+results/parameter-correlation.svg
+.vscode/settings.json
