@@ -1,0 +1,15 @@
+Metric,Value
+Runs,20
+Prompts / Run,50
+Total Prompts,1000
+Total Time,49.202579975128174
+AVG. Time / Prompt,49.202579975128174
+AVG. Tokens / Second,369.3505505033765
+Total Input Tokens,186660
+AVG. Input Tokens / Prompt,186.66
+Total Output Tokens,18173
+AVG. Output Tokens / Prompt,18.173
+Total Emissions,0.00349675132164197
+Emissions / 1.000.000 Input Tokens,0.01873326541113238
+Emissions / 1.000.000 Output Tokens,0.19241464379254775
+Emissions / 10.000 Prompts,0.0349675132164197
