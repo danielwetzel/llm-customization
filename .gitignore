@@ -12,3 +12,7 @@ results/output_token_correlation.svg
 results/parameter-correlation.png
 results/parameter-correlation.svg
 .vscode/settings.json
+pages/utils/__pycache__/streamlit_utils.cpython-311.pyc
+*/__pycache__/*
+.vscode/launch.json
+.vscode/*
