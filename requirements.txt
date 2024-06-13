@@ -10,3 +10,4 @@ optimum
 wandb
 vllm
 torch
+plotly
