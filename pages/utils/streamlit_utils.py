@@ -4,6 +4,8 @@ import numpy as np
 import altair as alt
 import os
 import sys
+import json
+
 
 def init_session_states():
     if 'metric' not in st.session_state:
@@ -14,6 +16,9 @@ def init_session_states():
 
     if 'curr_page' not in st.session_state:
         st.session_state.curr_page = 'vllm_tests'
+    
+    if 'MTBENCH_CATEGORIES' not in st.session_state:
+        st.session_state.MTBENCH_CATEGORIES = ["Writing", "Roleplay", "Reasoning", "Math", "Coding", "Extraction", "STEM", "Humanities"]
 
 
 @st.cache_data
@@ -27,9 +32,48 @@ def load_csv_data(type='emission_regression'):
     return df
 
 
+@st.cache_data
+def get_mt_model_df(file_path):
+    q2result = []
+    fin = open(f"{file_path}.jsonl", "r")
+    for line in fin:
+        obj = json.loads(line)
+        obj["category"] = st.session_state.MTBENCH_CATEGORIES[(obj["question_id"]-81)//10]
+        q2result.append(obj)
+    df = pd.DataFrame(q2result)
+    return df
+
+
+@st.cache_data
+def get_mt_model_df_pair(file_path):
+    fin = open("{file_path}.jsonl", "r")
+    q2result = []
+    for line in fin:
+        obj = json.loads(line)
+
+        result = {}
+        result["qid"] = str(obj["question_id"])
+        result["turn"] = str(obj["turn"])
+        if obj["g1_winner"] == "model_1" and obj["g2_winner"] == "model_1":
+            result["result"] = "win"
+        elif obj["g1_winner"] == "model_2" and obj["g2_winner"] == "model_2":
+            result["result"] = "loss"
+        else:
+            result["result"] = "tie"
+        result["category"] = st.session_state.MTBENCH_CATEGORIES[(obj["question_id"]-81)//10]
+        result["model"] = obj["model_1"]
+        q2result.append(result)
+
+    df = pd.DataFrame(q2result)
+
+    return df
+
+
 def label_func(input): 
 
     label_dict = {
+
+        # Emission Metrics
         'actual_emissions_per_10k_prompts': 'Emissions per 10,000 Prompts',
         'actual_cpu_energy_per_10k_prompts': 'CPU Energy per 10,000 Prompts',
         'actual_gpu_energy_per_10k_prompts': 'GPU Energy per 10,000 Prompts',
@@ -37,6 +81,20 @@ def label_func(input):
         'actual_non_idle_gpu_energy_per_10k_prompts' : 'Idle GPU Energy per 10,000 Prompts', 
         'actual_idle_gpu_energy_per_10k_prompts' : 'Non-Idle GPU Energy per 10,000 Prompts', 
         'actual_emissions_per_1M_out_tok': 'Emissions per 1M Output Tokens',
+
+
+
+        # Benchmark Models
+        "Llama-2-7b-chat": "LLaMA-2-7B",
+        "Llama-2-13b-chat": "LLaMA-2-13B",
+        "Llama-2-70b-chat": "LLaMA-2-70B",
+        "llama-3-8B-Instruct": "LLaMA-3-8B",
+        "gpt-3.5-turbo": "GPT-3.5-Turbo",
+        "gpt-4": "GPT-4", 
+        "claude-v1": "Claude-v1",
+        "vicuna-33b-v1.3": "Vicuna-33B",
+        "vicuna-13b-v1.3": "Vicuna-13B",
+        "vicuna-7b-v1.3": "Vicuna-7B",
     }
 
 
@@ -197,6 +255,7 @@ def sidebar():
 
         st.title("Navigation")
         st.page_link(page="pages/vllm_tests.py", label="vLLM Tests", icon="⭐")
+        st.page_link(page="pages/benchmarks.py", label="Benchmarks", icon="📊")
         st.page_link(page="pages/initial_tests.py", label="Early Tests", icon="⏳")
 
         st.write("")
