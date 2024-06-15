@@ -1,3 +1,6 @@
 [submodule "llm_judge/FastChat"]
 	path = llm_judge/FastChat
 	url = https://github.com/danielwetzel/FastChat.git
+[submodule "vllm"]
+	path = vllm
+	url = https://github.com/danielwetzel/vllm.git
