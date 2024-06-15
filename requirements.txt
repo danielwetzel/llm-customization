@@ -3,12 +3,12 @@ bitsandbytes
 codecarbon
 datasets
 ipywidgets
+jupyter
 streamlit
 transformers
 optimum
-#flash-attn
 wandb
 vllm
-torch
-plotly
-unsloth[cu121-ampere-torch230] @ git+https://github.com/unslothai/unsloth.git
+#torch
+#plotly
+#unsloth[cu121-ampere-torch230] @ git+https://github.com/unslothai/unsloth.git

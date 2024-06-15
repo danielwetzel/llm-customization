@@ -3,6 +3,7 @@
 #meta-llama/*
 #test_1_meta-llama/*
 get_tokens.py
+notebooks/get_tokens.py
 __pycache__/*
 wandb/*
 results/input_token_correlation.png
@@ -16,3 +17,5 @@ pages/utils/__pycache__/streamlit_utils.cpython-311.pyc
 */__pycache__/*
 .vscode/launch.json
 .vscode/*
+notebooks/wandb/*
+notebooks/_unsloth_temporary_saved_buffers/*
