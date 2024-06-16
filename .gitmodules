@@ -4,3 +4,6 @@
 [submodule "vllm"]
 	path = vllm
 	url = https://github.com/danielwetzel/vllm.git
+[submodule "notebooks/fsdp_qlora"]
+	path = notebooks/fsdp_qlora
+	url = https://github.com/danielwetzel/fsdp_qlora.git

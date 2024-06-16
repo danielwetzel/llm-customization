@@ -19,3 +19,5 @@ pages/utils/__pycache__/streamlit_utils.cpython-311.pyc
 .vscode/*
 notebooks/wandb/*
 notebooks/_unsloth_temporary_saved_buffers/*
+wandb/*
+wandb/settings

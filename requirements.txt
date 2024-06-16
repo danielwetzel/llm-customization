@@ -9,6 +9,9 @@ transformers
 optimum
 wandb
 vllm
+peft
+trl
+evaluate
 #torch
 #plotly
 #unsloth[cu121-ampere-torch230] @ git+https://github.com/unslothai/unsloth.git
