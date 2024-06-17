@@ -42,11 +42,14 @@ def mt_bench_page(df):
             "Llama-2-70b-chat", 
             "llama-3-8B-Instruct", 
             "gpt-3.5-turbo", 
-            "gpt-4", 
+            "gpt-4",
+            "gpt-4-turbo", 
+            "gpt-4o",  
             "claude-v1", 
             "vicuna-33b-v1.3", 
             "vicuna-13b-v1.3", 
-            "vicuna-7b-v1.3"]
+            "vicuna-7b-v1.3", 
+            "Llama-3-8B-Instruct_Orce_plus"]
         
         pre_select_models = [
             #"Llama-2-7b-chat", 
@@ -54,7 +57,9 @@ def mt_bench_page(df):
             "Llama-2-70b-chat", 
             "llama-3-8B-Instruct", 
             "gpt-3.5-turbo", 
-            "gpt-4"]
+            #"gpt-4",
+            "gpt-4-turbo", 
+            "gpt-4o",]
 
         target_models = st.multiselect("Select Models to Review", models, default=pre_select_models, key="mtbench_models", format_func=label_func)
 
@@ -80,6 +85,9 @@ def mt_bench_page(df):
                 "vicuna-33b-v1.3": "Vicuna-33B",
                 "vicuna-13b-v1.3": "Vicuna-13B",
                 "vicuna-7b-v1.3": "Vicuna-7B",
+                "Llama-3-8B-Instruct_Orce_plus": "Orca-Plus-8B", 
+                "gpt-4-turbo": "GPT-4-Turbo", 
+                "gpt-4o": "GPT-4o", 
                 }
 
         for k, v in rename_map.items():

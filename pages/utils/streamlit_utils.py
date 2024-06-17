@@ -91,10 +91,13 @@ def label_func(input):
         "llama-3-8B-Instruct": "LLaMA-3-8B",
         "gpt-3.5-turbo": "GPT-3.5-Turbo",
         "gpt-4": "GPT-4", 
+        "gpt-4-turbo": "GPT-4-Turbo", 
+        "gpt-4o": "GPT-4o", 
         "claude-v1": "Claude-v1",
         "vicuna-33b-v1.3": "Vicuna-33B",
         "vicuna-13b-v1.3": "Vicuna-13B",
         "vicuna-7b-v1.3": "Vicuna-7B",
+        "Llama-3-8B-Instruct_Orce_plus": "Orca-Plus-8B",
     }
 
 

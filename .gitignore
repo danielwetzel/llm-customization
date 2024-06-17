@@ -21,3 +21,4 @@ notebooks/wandb/*
 notebooks/_unsloth_temporary_saved_buffers/*
 wandb/*
 wandb/settings
+notebooks/models*
