@@ -22,3 +22,5 @@ notebooks/_unsloth_temporary_saved_buffers/*
 wandb/*
 wandb/settings
 notebooks/models*
+notebooks/.env
+.DS_Store
