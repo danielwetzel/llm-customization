@@ -7,3 +7,6 @@
 [submodule "notebooks/fsdp_qlora"]
 	path = notebooks/fsdp_qlora
 	url = https://github.com/danielwetzel/fsdp_qlora.git
+[submodule "llm_judge/arena-hard-auto"]
+	path = llm_judge/arena-hard-auto
+	url = https://github.com/danielwetzel/arena-hard-auto.git
