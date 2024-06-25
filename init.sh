@@ -10,8 +10,3 @@ git config --global credential.helper store
 
 git submodule init
 git submodule update
-
-conda create -n llm_judge python=3.9 -y
-conda init
-
-exec bash

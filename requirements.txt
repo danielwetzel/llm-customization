@@ -19,4 +19,4 @@ torch == 2.3.0
 xformers == 0.0.26.post1  # Requires PyTorch 2.3.0
 vllm-flash-attn == 2.5.9
 openai
-dotenv
+python-dotenv
