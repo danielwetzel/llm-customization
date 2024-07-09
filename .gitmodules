@@ -10,3 +10,6 @@
 [submodule "llm_judge/arena-hard-auto"]
 	path = llm_judge/arena-hard-auto
 	url = https://github.com/danielwetzel/arena-hard-auto.git
+[submodule "AutoGPTQ"]
+	path = AutoGPTQ
+	url = https://github.com/PanQiWei/AutoGPTQ.git
