@@ -24,3 +24,5 @@ wandb/settings
 notebooks/models*
 notebooks/.env
 .DS_Store
+notebooks/Meta-Llama-3-70B-Instruct-8bit-FP8-quant/*
+notebooks/Meta-Llama-3-70B-Instruct-8bit-FP8-quant-dynamic/*
