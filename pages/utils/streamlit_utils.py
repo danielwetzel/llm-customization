@@ -8,6 +8,9 @@ import json
 
 
 def init_session_states():
+
+    pd.options.mode.chained_assignment = None
+
     if 'metric' not in st.session_state:
         st.session_state.metric = 'actual_emissions_per_10k_prompts'
 
@@ -107,7 +110,7 @@ def label_func(input):
 # Function to create charts for each test type
 def create_chart(df, test_type, metric = 'actual_emissions_per_10k_prompts', remove_x_title=False):
     llama2_note = 'Note: Emissions normalized to number of output tokens for Llama2 because the Llama2 and Llama3 output differed drastically'
-    chart_data = df[df['test_type'] == test_type]
+    chart_data = df.loc[df['test_type'] == test_type]
 
     if test_type == 'Output-tok': 
         x_title = 'Average Output Tokens per Prompt'
@@ -162,7 +165,7 @@ def create_chart(df, test_type, metric = 'actual_emissions_per_10k_prompts', rem
     
     # Add note for Llama2
     if test_type == 'Llama2 Params':
-        chart_data['Note'] = llama2_note
+        chart_data.loc[:, 'Note'] = llama2_note
         #print(chart_data)
         scatter = scatter.encode(
             tooltip=[
@@ -193,7 +196,7 @@ def create_chart(df, test_type, metric = 'actual_emissions_per_10k_prompts', rem
 def create_reg_chart(df, test_type, metric='actual_emissions_per_10k_prompts',  degree_list = [1, 2, 5], remove_x_title=False):
 
     llama2_note = 'Note: Emissions normalized to number of output tokens for Llama2 because the Llama2 and Llama3 output differed drastically'
-    chart_data = df[df['test_type'] == test_type]
+    chart_data = df.loc[df['test_type'] == test_type]
 
     if test_type == 'Output-tok': 
         x_title = 'Average Output Tokens per Prompt'

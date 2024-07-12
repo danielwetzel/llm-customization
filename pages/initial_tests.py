@@ -22,8 +22,7 @@ def overview_page(df):
 
         # Create charts for each test type
         stacked_charts = []
-        stacked_df = df[df.num_examples != 90]
-        stacked_df = stacked_df[df.test_type != 'framework_comp_vllm']
+        stacked_df = df[(df.num_examples != 90) & (df.test_type != 'framework_comp_vllm')]
         for test_type in stacked_df['test_type'].unique():
             stacked_charts.append(create_chart(stacked_df, test_type, metric=st.session_state.metric, remove_x_title=True))
 
@@ -117,7 +116,7 @@ def params_page(df):
 
         tests = ['Llama2 Params', 'Llama3 Params']
 
-        params_df = df[df['test_type'].isin(tests)]
+        params_df = df.loc[df['test_type'].isin(tests)]
         params_charts = []
 
         for test_type in params_df['test_type'].unique():
@@ -149,7 +148,7 @@ def framework_page(df):
         st.write("")
         st.write("")
 
-        df_framework_comp = df[df['model_type'].str.contains('bloomz')]
+        df_framework_comp = df.loc[df['model_type'].str.contains('bloomz')]
         #df_framework_comp = df_framework_comp[df_framework_comp['model_type'] != 'bloomz-3b']
 
         vis, select = st.columns([9, 1])
