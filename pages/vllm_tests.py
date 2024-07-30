@@ -9,8 +9,7 @@ from pages.utils.streamlit_utils import *
 
 
 def comp_page(df):
-
-    lables = [
+    labels = [
         '1: GPU Non-Idle',
         '2: GPU Idle',
         '0: GPU',
@@ -26,18 +25,15 @@ def comp_page(df):
     ]
 
     st.subheader("Inference Serving Engine / Framework Comparison")
-    st.write("This section visualized the energy consumption of vLLM compared to HuggingFace Transformers.")
-
+    st.write("This section visualizes the energy consumption of vLLM compared to HuggingFace Transformers.")
     st.write("")
 
-    with st.container(border=True):
-
+    with st.container():
         label, type = st.columns([8, 2], gap='large')
         with label:
-            label_selections = st.multiselect(label='Choose Energy Types', options=lables, default=default_labels, key='comp')
+            label_selections = st.multiselect(label='Choose Energy Types', options=labels, default=default_labels, key='comp')
         with type:
             display_type = st.radio("Display Type", ('Stacked', 'Grouped', 'Line'))
-
 
         st.divider()
 
@@ -61,6 +57,8 @@ def comp_page(df):
                             var_name='Energy_Type', 
                             value_name='Energy_Consumption')
 
+        # Add kWh unit to the energy consumption values
+        df_melted['Energy_Consumption_kWh'] = df_melted['Energy_Consumption'].apply(lambda x: f"{x:.3f} kWh")
 
         # Define a sorting index for Energy_Type
         df_melted['Energy_Type_Order'] = df_melted['Energy_Type'].map({
@@ -84,7 +82,7 @@ def comp_page(df):
         if display_type == 'Stacked':
             # Stacked Bar Chart: Breakdown of Actual Energy Consumption
             chart = alt.Chart(filtered_df).mark_bar(size=50).encode(
-                x=alt.X('engine', title='Inference Engine / Framework'),
+                x=alt.X('engine', title='Inference Engine / Framework', axis=alt.Axis(labelAngle=0)),
                 y=alt.Y('sum(Energy_Consumption)', title='Energy Consumed per 10k Prompts (in kWh)'),
                 color=alt.Color('Energy_Type_Order', title='Energy Type', 
                                 scale=alt.Scale(
@@ -92,7 +90,7 @@ def comp_page(df):
                                     range=filtered_df['display_colors'].unique())
                                 ),
                 order=alt.Order('Energy_Type_Order', sort='descending'),
-                tooltip=['num_prompts', 'Energy_Type', 'Energy_Consumption']
+                tooltip=['num_prompts', 'Energy_Type_Order', 'Energy_Consumption_kWh']
             ).properties(
                 width=600,
                 height=600,
@@ -102,7 +100,7 @@ def comp_page(df):
         elif display_type == 'Line':
             # Line Chart: Showing decrease from transformers to vllm
             line_chart = alt.Chart(filtered_df).mark_line(point=True).encode(
-                x=alt.X('engine:N', title='Inference Engine / Framework'),
+                x=alt.X('engine:N', title='Inference Engine / Framework', axis=alt.Axis(labelAngle=0)),
                 y=alt.Y('Energy_Consumption', title='Energy Consumed per 10k Prompts (in kWh)'),
                 color=alt.Color('Energy_Type_Order', title='Energy Type', 
                                 scale=alt.Scale(
@@ -110,7 +108,7 @@ def comp_page(df):
                                     range=filtered_df['display_colors'].unique())
                                 ),
                 detail='Energy_Type_Order',
-                tooltip=['num_prompts', 'Energy_Type', 'Energy_Consumption']
+                tooltip=['num_prompts', 'Energy_Type_Order', 'Energy_Consumption_kWh']
             ).properties(
                 width=600,
                 height=600,
@@ -118,13 +116,14 @@ def comp_page(df):
             )
 
             # Add text annotations for the points
-            text_chart = alt.Chart(filtered_df).mark_text(align='left', dx=5, dy=-5).encode(
+            text_chart = alt.Chart(filtered_df).mark_text(align='left',fontSize=12, dx=5, dy=-5).encode(
                 x=alt.X('engine:N'),
                 y=alt.Y('Energy_Consumption'),
                 text=alt.Text('Energy_Consumption:Q', format='.3f'),
                 color=alt.Color('Energy_Type_Order', scale=alt.Scale(
                     domain=label_selections,
-                    range=filtered_df['display_colors'].unique()))
+                    range=filtered_df['display_colors'].unique())),
+                tooltip=['num_prompts', 'Energy_Type_Order', 'Energy_Consumption_kWh']
             )
 
             # Calculate decrease factors and create decrease annotations
@@ -134,25 +133,39 @@ def comp_page(df):
                 transformers_value = temp_df[temp_df['engine'] == 'transformers']['Energy_Consumption'].values[0]
                 vllm_value = temp_df[temp_df['engine'] == 'vllm']['Energy_Consumption'].values[0]
                 decrease_factor = transformers_value / vllm_value if vllm_value != 0 else 0
-                decreases.append({'engine': 'vllm', 'Energy_Consumption': (transformers_value + vllm_value) / 2, 'decrease_factor': f"{decrease_factor:.2f}x", 'Energy_Type_Order': energy_type})
+                decreases.append({
+                    'Energy_Type_Order': energy_type,
+                    'x': 'u',
+                    'y': (transformers_value + vllm_value) / 2,
+                    'decrease_factor': f"{decrease_factor:.2f}x"
+                })
 
             decreases_df = pd.DataFrame(decreases)
 
-            decrease_chart = alt.Chart(decreases_df).mark_text(align='center', dy=60, dx=-60, fontSize=14, fontWeight='bold').encode(
-                x=alt.X('engine:N'),
-                y=alt.Y('Energy_Consumption', title='Energy Consumed per 10k Prompts (in kWh)'),
+            decrease_chart = alt.Chart(decreases_df).mark_text(align='center', fontSize=14, fontWeight='bold').encode(
+                x=alt.X('x'),
+                y=alt.Y('y:Q'),
                 text=alt.Text('decrease_factor:N'),
                 color=alt.Color('Energy_Type_Order', scale=alt.Scale(
                     domain=label_selections,
-                    range=filtered_df['display_colors'].unique()))
+                    range=filtered_df['display_colors'].unique())),
+                tooltip=['Energy_Type_Order', 'decrease_factor']
             )
 
-            chart = line_chart + text_chart + decrease_chart
+            # Add white background for text
+            rect_chart = alt.Chart(decreases_df).mark_rect(
+                width=50, height=20, color='white', opacity=0.7
+            ).encode(
+                x=alt.X('x'),
+                y=alt.Y('y:Q')
+            )
+
+            chart = line_chart + text_chart + rect_chart + decrease_chart
         
         else: 
             # Grouped Bar Chart: Breakdown of Actual Energy Consumption
             chart = alt.Chart(filtered_df).mark_bar(size=50).encode(
-                x=alt.X('engine:N', title='Inference Engine / Framework'),
+                x=alt.X('engine:N', title='Inference Engine / Framework', axis=alt.Axis(labelAngle=0)),
                 y=alt.Y('Energy_Consumption', title='Energy Consumed per 10k Prompts (in kWh)'),
                 color=alt.Color('Energy_Type_Order', title='Energy Type', 
                                 scale=alt.Scale(
@@ -160,14 +173,12 @@ def comp_page(df):
                                     range=filtered_df['display_colors'].unique())
                                 ),
                 xOffset='Energy_Type_Order',
-                tooltip=['num_prompts', 'Energy_Type', 'Energy_Consumption']
+                tooltip=['num_prompts', 'Energy_Type_Order', 'Energy_Consumption_kWh']
             ).properties(
                 width=600,
                 height=600,
                 title='Breakdown of Actual Energy Consumption per 10k Prompts'
             )     
-
-     
 
         st.altair_chart(chart, use_container_width=True)
 
