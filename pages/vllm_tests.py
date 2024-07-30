@@ -349,6 +349,148 @@ def regression_page(df):
     st.dataframe(df, hide_index=True)
 
 
+def model_param_comp_page(df):
+    labels = [
+        '1: GPU Non-Idle',
+        '2: GPU Idle',
+        '0: GPU',
+        '3: CPU',
+        '4: RAM', 
+        '5: Total'
+    ]
+
+    default_labels = [
+        '1: GPU Non-Idle',
+        '2: GPU Idle',
+        '3: CPU',
+        '4: RAM'
+    ]
+
+    st.subheader("Model Parameter Comparison")
+    st.write("This section visualizes the model parameters and their energy consumption.")
+    st.write("")
+
+    with st.container(border=True):
+        
+        sort, display = st.columns([5, 5])
+        with sort:
+            sort_option = st.selectbox("Sort by", options=['Number of GPUs', 'Model Parameters'], key='sort_option_param_comp')
+        with display: 
+            display = st.selectbox("Display Settings", options=["Show all", "Largest Instance Only", "Smallest Instance Possible"], key='display_param_comp')
+
+        energy_type_selections = st.multiselect("Select Energy Types", options=labels, default=default_labels, key='energy_type_param_comp')
+
+        # Map labels back to actual column names
+        energy_type_mapping = {
+            '3: CPU': 'cpu_energy_per_1M_prompts',
+            '4: RAM': 'ram_energy_per_1M_prompts',
+            '2: GPU Idle': 'idle_gpu_energy_per_1M_prompts',
+            '1: GPU Non-Idle': 'non_idle_gpu_energy_per_1M_prompts',
+            '0: GPU': 'gpu_energy_per_1M_prompts',
+            '5: Total': 'total_energy_per_1M_prompts',
+        }
+
+        # Map selections to the corresponding column names
+        selected_columns = [energy_type_mapping[label] for label in energy_type_selections]
+
+        # Prepare the dataframe for the stacked bar chart
+        df_melted = df.melt(id_vars=[
+                                    'model_setup', 
+                                    'parameters', 
+                                    'num_gpus', 
+                                    'num_prompts', 
+                                    'total_time',
+                                    'time_per_prompt', 
+                                    'tok_per_sec',
+                                    'total_out_tok', 
+                                    'total_in_tok', 
+                                    'avg_out_tok', 
+                                    'avg_in_tok'], 
+                            value_vars=selected_columns,
+                            var_name='Energy_Type', 
+                            value_name='Energy_Consumption')
+
+        # Add kWh unit to the energy consumption values
+        df_melted['Energy_Consumption_kWh'] = df_melted['Energy_Consumption'].apply(lambda x: f"{x:.3f} kWh")
+
+        # Reverse map the energy type columns back to labels for display
+        reverse_energy_type_mapping = {v: k for k, v in energy_type_mapping.items()}
+        df_melted['Energy_Type_Order'] = df_melted['Energy_Type'].map(reverse_energy_type_mapping)
+
+        # Color mapping
+        color_mapping = {
+            'total_energy_per_1M_prompts': '#ff6600',
+            'cpu_energy_per_1M_prompts': '#9a86b8',
+            'gpu_energy_per_1M_prompts': '#005239',
+            'ram_energy_per_1M_prompts': '#86b7b8',
+            'idle_gpu_energy_per_1M_prompts': '#5bf0d2',
+            'non_idle_gpu_energy_per_1M_prompts': '#16c473'
+        }
+
+        df_melted['display_colors'] = df_melted['Energy_Type'].map(color_mapping)
+
+        # Define custom sort orders
+        sort_order_gpus = [
+            '7B_1GPUs', 
+            '7B_2GPUs', '13B_2GPUs', 
+            '7B_4GPUs', '13B_4GPUs', '34B_4GPUs', 
+            '7B_8GPUs', '13B_8GPUs', '34B_8GPUs', '70B_8GPUs'
+        ]
+
+        sort_order_params = [
+            '7B_1GPUs', '7B_2GPUs', '7B_4GPUs', '7B_8GPUs',
+            '13B_2GPUs', '13B_4GPUs', '13B_8GPUs',
+            '34B_4GPUs', '34B_8GPUs',
+            '70B_8GPUs'
+        ]
+
+        smallest_display_options = [
+            '7B_1GPUs', '13B_2GPUs', '34B_4GPUs', '70B_8GPUs'
+        ]
+
+        largest_display_options = [
+            '70B_8GPUs', '34B_8GPUs', '13B_8GPUs', '7B_8GPUs'
+        ]
+
+        if sort_option == 'Number of GPUs':
+            sort_order = sort_order_gpus
+        else:
+            sort_order = sort_order_params
+
+        df_melted['model_setup'] = pd.Categorical(df_melted['model_setup'], categories=sort_order, ordered=True)
+
+        # Filter by selected energy types
+        filtered_df = df_melted[df_melted['Energy_Type'].isin(selected_columns)]
+
+        if display == 'Largest Instance Only':
+            filtered_df = filtered_df[filtered_df['model_setup'].isin(largest_display_options)]
+        elif display == 'Smallest Instance Possible':
+            filtered_df = filtered_df[filtered_df['model_setup'].isin(smallest_display_options)]
+
+        chart = alt.Chart(filtered_df).mark_bar(size=40).encode(
+            x=alt.X('model_setup:O', title='Model Setup', sort=sort_order),
+            y=alt.Y('Energy_Consumption:Q', title='Energy Consumed per 1M Prompts (kWh)'),
+            color=alt.Color('Energy_Type_Order', title='Energy Type', 
+                             scale=alt.Scale(
+                                domain=energy_type_selections,
+                                range=[color_mapping[energy_type_mapping[label]] for label in energy_type_selections])
+                             ),
+            order=alt.Order('Energy_Type_Order', sort='descending'),
+            tooltip=['num_prompts', 'Energy_Type_Order', 'Energy_Consumption_kWh']
+        ).properties(
+            width=600,
+            height=600,
+            title=f'Energy Consumption by Model Setup'
+        )
+
+        st.altair_chart(chart, use_container_width=True)
+
+    st.divider()
+
+    st.subheader("Underlying Data")
+
+    st.dataframe(df, hide_index=True)
+
 
 def vllm_tests(): 
     st.title("LLM Emission Tests 🌍🌱")
@@ -361,8 +503,14 @@ def vllm_tests():
 
     df = load_csv_data('emission_regression_vllm')
     comp_df = load_csv_data('transformers_vs_vllm')
+    param_comp_df = load_csv_data('params_test')
 
-    comp, breackdown, regression = st.tabs(["Transformers vs. vLLM","Energy Type Breakdown", "Energy Regression"])
+    comp, breackdown, regression, model_param_comp = st.tabs([
+        "Transformers vs. vLLM",
+        "Energy Type Breakdown", 
+        "Energy Regression", 
+        "Model Parameter Comparison"
+        ])
     
     with comp:
         st.write("")
@@ -383,6 +531,11 @@ def vllm_tests():
         st.write("")
 
         regression_page(df)
+    
+    with model_param_comp:
+        st.write("")
+        st.write("")
+        model_param_comp_page(param_comp_df)
 
 if __name__ == "__main__":
     init_session_states()
