@@ -32,7 +32,12 @@ def comp_page(df):
 
     with st.container(border=True):
 
-        label_selections = st.multiselect(label='Choose Energy Types', options=lables, default=default_labels, key='comp')
+        label, type = st.columns([8, 2], gap='large')
+        with label:
+            label_selections = st.multiselect(label='Choose Energy Types', options=lables, default=default_labels, key='comp')
+        with type:
+            display_type = st.radio("Display Type", ('Stacked', 'Grouped', 'Line'))
+
 
         st.divider()
 
@@ -76,25 +81,95 @@ def comp_page(df):
 
         filtered_df = df_melted[df_melted['Energy_Type_Order'].isin(label_selections)]
 
+        if display_type == 'Stacked':
+            # Stacked Bar Chart: Breakdown of Actual Energy Consumption
+            chart = alt.Chart(filtered_df).mark_bar(size=50).encode(
+                x=alt.X('engine', title='Inference Engine / Framework'),
+                y=alt.Y('sum(Energy_Consumption)', title='Energy Consumed per 10k Prompts (in kWh)'),
+                color=alt.Color('Energy_Type_Order', title='Energy Type', 
+                                scale=alt.Scale(
+                                    domain=label_selections,
+                                    range=filtered_df['display_colors'].unique())
+                                ),
+                order=alt.Order('Energy_Type_Order', sort='descending'),
+                tooltip=['num_prompts', 'Energy_Type', 'Energy_Consumption']
+            ).properties(
+                width=600,
+                height=600,
+                title='Breakdown of Actual Energy Consumption per 10k Prompts'
+            )
+        
+        elif display_type == 'Line':
+            # Line Chart: Showing decrease from transformers to vllm
+            line_chart = alt.Chart(filtered_df).mark_line(point=True).encode(
+                x=alt.X('engine:N', title='Inference Engine / Framework'),
+                y=alt.Y('Energy_Consumption', title='Energy Consumed per 10k Prompts (in kWh)'),
+                color=alt.Color('Energy_Type_Order', title='Energy Type', 
+                                scale=alt.Scale(
+                                    domain=label_selections,
+                                    range=filtered_df['display_colors'].unique())
+                                ),
+                detail='Energy_Type_Order',
+                tooltip=['num_prompts', 'Energy_Type', 'Energy_Consumption']
+            ).properties(
+                width=600,
+                height=600,
+                title='Breakdown of Actual Energy Consumption per 10k Prompts'
+            )
 
-        # Stacked Bar Chart: Breakdown of Actual Energy Consumption
-        stacked_bar_chart = alt.Chart(filtered_df).mark_bar(size=50).encode(
-            x=alt.X('engine', title='Inference Engine / Framework'),
-            y=alt.Y('sum(Energy_Consumption)', title='Energy Consumed per 10k Prompts (in kWh)'),
-            color=alt.Color('Energy_Type_Order', title='Energy Type', 
-                            scale=alt.Scale(
-                                domain=label_selections,
-                                range=filtered_df['display_colors'].unique())
-                            ),
-            order=alt.Order('Energy_Type_Order', sort='descending'),
-            tooltip=['num_prompts', 'Energy_Type', 'Energy_Consumption']
-        ).properties(
-            width=600,
-            height=600,
-            title='Breakdown of Actual Energy Consumption per 10k Prompts'
-        )
+            # Add text annotations for the points
+            text_chart = alt.Chart(filtered_df).mark_text(align='left', dx=5, dy=-5).encode(
+                x=alt.X('engine:N'),
+                y=alt.Y('Energy_Consumption'),
+                text=alt.Text('Energy_Consumption:Q', format='.3f'),
+                color=alt.Color('Energy_Type_Order', scale=alt.Scale(
+                    domain=label_selections,
+                    range=filtered_df['display_colors'].unique()))
+            )
 
-        st.altair_chart(stacked_bar_chart, use_container_width=True)
+            # Calculate decrease factors and create decrease annotations
+            decreases = []
+            for energy_type in filtered_df['Energy_Type_Order'].unique():
+                temp_df = filtered_df[filtered_df['Energy_Type_Order'] == energy_type]
+                transformers_value = temp_df[temp_df['engine'] == 'transformers']['Energy_Consumption'].values[0]
+                vllm_value = temp_df[temp_df['engine'] == 'vllm']['Energy_Consumption'].values[0]
+                decrease_factor = transformers_value / vllm_value if vllm_value != 0 else 0
+                decreases.append({'engine': 'vllm', 'Energy_Consumption': (transformers_value + vllm_value) / 2, 'decrease_factor': f"{decrease_factor:.2f}x", 'Energy_Type_Order': energy_type})
+
+            decreases_df = pd.DataFrame(decreases)
+
+            decrease_chart = alt.Chart(decreases_df).mark_text(align='center', dy=60, dx=-60, fontSize=14, fontWeight='bold').encode(
+                x=alt.X('engine:N'),
+                y=alt.Y('Energy_Consumption', title='Energy Consumed per 10k Prompts (in kWh)'),
+                text=alt.Text('decrease_factor:N'),
+                color=alt.Color('Energy_Type_Order', scale=alt.Scale(
+                    domain=label_selections,
+                    range=filtered_df['display_colors'].unique()))
+            )
+
+            chart = line_chart + text_chart + decrease_chart
+        
+        else: 
+            # Grouped Bar Chart: Breakdown of Actual Energy Consumption
+            chart = alt.Chart(filtered_df).mark_bar(size=50).encode(
+                x=alt.X('engine:N', title='Inference Engine / Framework'),
+                y=alt.Y('Energy_Consumption', title='Energy Consumed per 10k Prompts (in kWh)'),
+                color=alt.Color('Energy_Type_Order', title='Energy Type', 
+                                scale=alt.Scale(
+                                    domain=label_selections,
+                                    range=filtered_df['display_colors'].unique())
+                                ),
+                xOffset='Energy_Type_Order',
+                tooltip=['num_prompts', 'Energy_Type', 'Energy_Consumption']
+            ).properties(
+                width=600,
+                height=600,
+                title='Breakdown of Actual Energy Consumption per 10k Prompts'
+            )     
+
+     
+
+        st.altair_chart(chart, use_container_width=True)
 
 
     
