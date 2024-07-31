@@ -376,7 +376,7 @@ def model_param_comp_page(df):
         with sort:
             sort_option = st.selectbox("Sort by", options=['Number of GPUs', 'Model Parameters'], key='sort_option_param_comp')
         with display: 
-            display = st.selectbox("Display Settings", options=["Show all", "Largest Instance Only", "Smallest Instance Possible"], key='display_param_comp')
+            display = st.selectbox("Display Settings", options=["Show all", "Largest Instance Only", "Smallest Instance Possible", "Lowest Energy Consumption"], key='display_param_comp')
 
         energy_type_selections = st.multiselect("Select Energy Types", options=labels, default=default_labels, key='energy_type_param_comp')
 
@@ -451,6 +451,10 @@ def model_param_comp_page(df):
             '70B_8GPUs', '34B_8GPUs', '13B_8GPUs', '7B_8GPUs'
         ]
 
+        lowest_energy_display_options = [
+            '7B_4GPUs', '13B_4GPUs', '34B_4GPUs', '70B_8GPUs'
+        ]
+
         if sort_option == 'Number of GPUs':
             sort_order = sort_order_gpus
         else:
@@ -465,6 +469,8 @@ def model_param_comp_page(df):
             filtered_df = filtered_df[filtered_df['model_setup'].isin(largest_display_options)]
         elif display == 'Smallest Instance Possible':
             filtered_df = filtered_df[filtered_df['model_setup'].isin(smallest_display_options)]
+        elif display == 'Lowest Energy Consumption':
+            filtered_df = filtered_df[filtered_df['model_setup'].isin(lowest_energy_display_options)]
 
         chart = alt.Chart(filtered_df).mark_bar(size=40).encode(
             x=alt.X('model_setup:O', title='Model Setup', sort=sort_order),
