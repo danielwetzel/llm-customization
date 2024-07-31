@@ -432,20 +432,19 @@ def model_param_comp_page(df):
         # Define custom sort orders
         sort_order_gpus = [
             '7B_1GPUs', 
-            '7B_2GPUs', '13B_2GPUs', 
             '7B_4GPUs', '13B_4GPUs', '34B_4GPUs', 
             '7B_8GPUs', '13B_8GPUs', '34B_8GPUs', '70B_8GPUs'
         ]
 
         sort_order_params = [
-            '7B_1GPUs', '7B_2GPUs', '7B_4GPUs', '7B_8GPUs',
-            '13B_2GPUs', '13B_4GPUs', '13B_8GPUs',
+            '7B_1GPUs', '7B_4GPUs', '7B_8GPUs',
+            '13B_4GPUs', '13B_8GPUs',
             '34B_4GPUs', '34B_8GPUs',
             '70B_8GPUs'
         ]
 
         smallest_display_options = [
-            '7B_1GPUs', '13B_2GPUs', '34B_4GPUs', '70B_8GPUs'
+            '7B_1GPUs', '13B_4GPUs', '34B_4GPUs', '70B_8GPUs'
         ]
 
         largest_display_options = [
