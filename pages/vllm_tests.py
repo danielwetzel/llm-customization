@@ -375,10 +375,16 @@ def model_param_comp_page(df):
         sort, display = st.columns([5, 5])
         with sort:
             sort_option = st.selectbox("Sort by", options=['Number of GPUs', 'Model Parameters'], key='sort_option_param_comp')
+
+            energy_type_selections = st.multiselect("Select Energy Types", options=labels, default=default_labels, key='energy_type_param_comp')
+
         with display: 
             display = st.selectbox("Display Settings", options=["Show all", "Largest Instance Only", "Smallest Instance Possible", "Lowest Energy Consumption"], key='display_param_comp')
 
-        energy_type_selections = st.multiselect("Select Energy Types", options=labels, default=default_labels, key='energy_type_param_comp')
+            param_size_selection = st.multiselect("Select Model Sizes", options=['7B', '13B', '34B', '70B'], default=['7B', '13B', '34B', '70B'], key='param_size_sel')
+
+            
+        st.divider()
 
         # Map labels back to actual column names
         energy_type_mapping = {
@@ -392,6 +398,10 @@ def model_param_comp_page(df):
 
         # Map selections to the corresponding column names
         selected_columns = [energy_type_mapping[label] for label in energy_type_selections]
+
+
+        # Filter the dataframe based on selected model sizes
+        df = df[df['model_setup'].str.split('_').str[0].isin(param_size_selection)]
 
         # Prepare the dataframe for the stacked bar chart
         df_melted = df.melt(id_vars=[
