@@ -5,10 +5,9 @@ datasets
 ipywidgets
 jupyter
 streamlit
-transformers #== 4.41.2
-optimum
+transformers==4.43.3
 wandb
-vllm
+vllm==0.5.3.post1
 peft
 trl
 evaluate
