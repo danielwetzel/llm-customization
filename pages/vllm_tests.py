@@ -29,6 +29,9 @@ def comp_page(df):
     st.write("")
 
     with st.container():
+
+        model_selection = st.selectbox("Select Model", options=['LLaMA-3', 'LLaMA-3.1'], index=0, key='model_selection')
+
         label, type = st.columns([8, 2], gap='large')
         with label:
             label_selections = st.multiselect(label='Choose Energy Types', options=labels, default=default_labels, key='comp')
@@ -37,8 +40,16 @@ def comp_page(df):
 
         st.divider()
 
+        if model_selection == 'LLaMA-3.1':
+            used_df = load_csv_data('transformers_vs_vllm_llama3_1')
+        
+        else: 
+            used_df = df
+        
+        
+
         # Prepare the dataframe for the stacked bar chart
-        df_melted = df.melt(id_vars=[
+        df_melted = used_df.melt(id_vars=[
                                     'engine', 
                                     'num_prompts', 
                                     'model_type', 
