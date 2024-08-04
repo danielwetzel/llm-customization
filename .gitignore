@@ -26,3 +26,7 @@ notebooks/.env
 .DS_Store
 notebooks/Meta-Llama-3-70B-Instruct-8bit-FP8-quant/*
 notebooks/Meta-Llama-3-70B-Instruct-8bit-FP8-quant-dynamic/*
+notebooks/quantization/Llama-3-70B-Instruct-4bit-bnb-quant/*
+notebooks/quantization/Llama-3-70B-Instruct-8bit-bnb-quant/*
+notebooks/quantization/Llama-3.1-70B-Instruct-4bit-bnb-quant/*
+notebooks/quantization/Llama-3.1-70B-Instruct-8bit-bnb-quant/*
