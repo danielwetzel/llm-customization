@@ -30,3 +30,4 @@ notebooks/quantization/Llama-3-70B-Instruct-4bit-bnb-quant/*
 notebooks/quantization/Llama-3-70B-Instruct-8bit-bnb-quant/*
 notebooks/quantization/Llama-3.1-70B-Instruct-4bit-bnb-quant/*
 notebooks/quantization/Llama-3.1-70B-Instruct-8bit-bnb-quant/*
+llm_judge/wandb/*
