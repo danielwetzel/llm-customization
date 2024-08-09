@@ -1,4 +1,4 @@
-.DS_Store
+*.DS_Store
 #emissions.csv
 #meta-llama/*
 #test_1_meta-llama/*
