@@ -1,0 +1,17 @@
+accelerate
+bitsandbytes
+codecarbon
+datasets
+ipywidgets
+jupyter
+streamlit
+transformers
+wandb
+peft
+trl
+evaluate
+plotly
+torch #== 2.3.0
+openai
+python-dotenv
+shortuuid
