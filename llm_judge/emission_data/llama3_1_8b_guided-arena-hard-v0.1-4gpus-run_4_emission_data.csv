@@ -1,0 +1,16 @@
+Metric,Value
+Model,llama3_1_8b
+Benchmark,arena-hard-v0.1
+Number of GPUs,4
+Total Prompts,500
+Total Time,637.5502834320068
+AVG. Time / Prompt,1.2751005668640136
+AVG. Tokens / Second,560.7808659034645
+Total Input Tokens,437296
+AVG. Input Tokens / Prompt,874.592
+Total Output Tokens,357526
+AVG. Output Tokens / Prompt,715.052
+Total Emissions,0.05046747959641155
+Emissions / 1.000.000 Input Tokens,0.11540805220356817
+Emissions / 1.000.000 Output Tokens,0.14115750909419608
+Emissions / 10.000 Prompts,1.009349591928231
