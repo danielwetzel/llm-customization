@@ -1,0 +1,16 @@
+Metric,Value
+Model,mistral_nemo
+Benchmark,arena-hard-v0.1
+Number of GPUs,4
+Total Prompts,500
+Total Time,454.567342042923
+AVG. Time / Prompt,0.909134684085846
+AVG. Tokens / Second,630.753627639458
+Total Input Tokens,71595
+AVG. Input Tokens / Prompt,143.19
+Total Output Tokens,286720
+AVG. Output Tokens / Prompt,573.44
+Total Emissions,0.037298754621269095
+Emissions / 1.000.000 Input Tokens,0.5209687076090382
+Emissions / 1.000.000 Output Tokens,0.1300877323565468
+Emissions / 10.000 Prompts,0.7459750924253818
