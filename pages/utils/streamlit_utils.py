@@ -30,7 +30,17 @@ def load_csv_data(type='emission_regression'):
     Load data from a csv file
     """
 
-    df = pd.read_csv(f'notebooks/results/data/{type}.csv')
+    df = pd.read_csv(f'results/data/{type}.csv')
+
+    return df
+
+@st.cache_data
+def load_parquet_data(type='results'):
+    """
+    Load data from a csv file
+    """
+
+    df = pd.read_parquet(f'results/data/{type}.parquet')
 
     return df
 

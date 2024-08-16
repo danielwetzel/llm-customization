@@ -6,6 +6,7 @@ import os
 import sys
 import plotly.express as px
 import plotly.graph_objects as go
+import re
 
 from pages.utils.streamlit_utils import *
 
@@ -13,111 +14,120 @@ from pages.utils.streamlit_utils import *
 
 
 
-def mt_bench_page(df): 
+def arena_results_page(df):
 
-    st.subheader("LLM Performance Benchmark - MT-Bench")
-    st.write("This section visualizes the MT-Bench Performance Benchmark for LLMs.")
-
-    st.write("")
-
-    with st.container(border=True):
-
-        all_models = df["model"].unique()
-
-        #st.write(all_models)
-
-        scores_all = []
-        for model in all_models:
-            for cat in st.session_state.MTBENCH_CATEGORIES:
-                # filter category/model, and score format error (<1% case)
-                res = df[(df["category"]==cat) & (df["model"]==model) & (df["score"] >= 0)]
-                score = res["score"].mean()
-
-                scores_all.append({"model": model, "category": cat, "score": score})
-
-        
-        models = [
-            "Llama-2-7b-chat", 
-            "Llama-2-13b-chat", 
-            "Llama-2-70b-chat", 
-            "llama-3-8B-Instruct", 
-            "gpt-3.5-turbo", 
-            "gpt-4",
-            "gpt-4-turbo", 
-            "gpt-4o",  
-            "claude-v1", 
-            "vicuna-33b-v1.3", 
-            "vicuna-13b-v1.3", 
-            "vicuna-7b-v1.3", 
-            "Llama-3-8B-Instruct_Orce_plus"]
-        
-        pre_select_models = [
-            #"Llama-2-7b-chat", 
-            #"Llama-2-13b-chat", 
-            "Llama-2-70b-chat", 
-            "llama-3-8B-Instruct", 
-            "gpt-3.5-turbo", 
-            #"gpt-4",
-            "gpt-4-turbo", 
-            "gpt-4o",]
-
-        target_models = st.multiselect("Select Models to Review", models, default=pre_select_models, key="mtbench_models", format_func=label_func)
-
-        st.divider()
-
-
-
-        scores_target = [scores_all[i] for i in range(len(scores_all)) if scores_all[i]["model"] in target_models]
-
-        # sort by target_models
-        scores_target = sorted(scores_target, key=lambda x: target_models.index(x["model"]), reverse=True)
-
-        df_score = pd.DataFrame(scores_target)
-        df_score = df_score[df_score["model"].isin(target_models)]
-
-        rename_map = {"Llama-2-7b-chat": "LLaMA-2-7B",
-                "Llama-2-13b-chat": "LLaMA-2-13B",
-                "Llama-2-70b-chat": "LLaMA-2-70B",
-                "llama-3-8B-Instruct": "LLaMA-3-8B",
-                "gpt-3.5-turbo": "GPT-3.5-Turbo",
-                "gpt-4": "GPT-4", 
-                "claude-v1": "Claude-v1",
-                "vicuna-33b-v1.3": "Vicuna-33B",
-                "vicuna-13b-v1.3": "Vicuna-13B",
-                "vicuna-7b-v1.3": "Vicuna-7B",
-                "Llama-3-8B-Instruct_Orce_plus": "Orca-Plus-8B", 
-                "gpt-4-turbo": "GPT-4-Turbo", 
-                "gpt-4o": "GPT-4o", 
-                }
-
-        for k, v in rename_map.items():
-            df_score.replace(k, v, inplace=True)
-
-    
-
-        fig = px.line_polar(df_score, r = 'score', theta = 'category', line_close = True, category_orders = {"category": st.session_state.MTBENCH_CATEGORIES},
-                    color = 'model', markers=True, color_discrete_sequence=px.colors.qualitative.Dark2, height=900)
-        
-        #fig.update_layout(legend=dict(
-        #    yanchor="top",
-        #    y=0.3,
-            #xanchor="left",
-            #x=0.99
-        #))
-
-        st.plotly_chart(fig, use_container_width=False, theme="streamlit")
-
-
-def vicuana_bench_page(df): 
-
-    st.subheader("LLM Performance Benchmark - Vicuana Benchmark")
-    st.write("This section visualizes the Vicuana Performance Benchmark for LLMs.")
+    st.subheader("Arena Hard v0.1 Results")
+    st.write("This section provides an overview of the results of the Arena Hard v0.1 Automated Benchmark.")
+    st.write("The Judge Model was GPT-4o and the Baseline Model was GPT-4-0314")
 
     st.write("")
 
     with st.container(border=True):
 
-        st.write("...")
+        seperate = st.selectbox("Seperate:", options=['All', 'Guided Only', 'Quantization Only', 'Model Only'], index=0, key='seperate')
+
+
+        if seperate == 'Guided Only':
+            df_transformed = df[df.quantization == 'bf16']
+            color = ['guided:N', 'Guided']
+
+        elif seperate == 'Quantization Only':
+            select_guidance = st.selectbox("Guidance:", options=['guided', 'non-guided'], index=1, key='guidance')
+            color = ['quantization:N', 'Quantization']
+
+            if select_guidance == 'guided':
+                df_transformed = df[df.guided == 1]
+            else:
+                df_transformed = df[df.guided == 0]
+
+        elif seperate == 'Model Only':
+            select_guidance = st.selectbox("Guidance:", options=['guided', 'non-guided'], index=1, key='guidance2')
+            df_transformed = df[df.quantization == 'bf16']
+            color = ['guided:N', 'Guided']
+
+            if select_guidance == 'guided':
+                df_transformed = df_transformed[df_transformed.guided == 1]
+            else:
+                df_transformed = df_transformed[df_transformed.guided == 0]
+        
+        else:
+            df_transformed = df
+            color = ['guided:N', 'Guided']
+
+        st.write("")
+        st.write("")
+
+
+        df_transformed['guided'] = df_transformed['guided'].map({1: 'True', 0: 'False'})
+
+        df_transformed['model_name'] = df_transformed['model_name'].apply(lambda x: re.sub(r'-2024-08-06', '', x))
+
+        df_table = df_transformed.groupby(['model_name', 'quantization', 'guided']).agg({
+            'arena_score': 'mean', 
+            'CI': 'first',
+            'output_tok': 'mean'
+        }).reset_index()
+
+        # Sort the DataFrame by 'arena_score' in descending order
+        df_table = df_table.sort_values(by='arena_score', ascending=False)
+
+        # Format the 'arena_score' to show only two decimal places
+        df_table['arena_score'] = df_table['arena_score'].map('{:.2f}'.format)
+
+        # Format the 'output_tok' to show no decimal places and rename the column
+        df_table['output_tok'] = df_table['output_tok'].map('{:.0f}'.format)
+
+        df_table = df_table[['model_name', 'arena_score', 'CI', 'output_tok', 'quantization', 'guided']]
+
+        df_table = df_table.rename(columns={'output_tok': 'avg #output_tok'})
+
+        df_vis = df_transformed.groupby(['model_name', 'quantization', 'guided']).agg({
+            'arena_score': 'mean', 
+            'CI': 'first',
+            'output_tok': 'mean', 
+            'model_class': 'first', 
+            '95_conf_plus' : 'mean',
+            '95_conf_minus' : 'mean'
+            }).reset_index()
+
+
+        df_vis = df_vis.sort_values(by='arena_score', ascending=False)
+
+        # Create the Altair chart
+        chart = alt.Chart(df_vis).mark_point(size=100).encode(  # Increased size of circles
+            x=alt.X('model_name:N', sort=None, title='Model Name'),
+            y=alt.Y('arena_score:Q', title='Arena Score', scale=alt.Scale(domain=[0, 100])),
+            color=alt.Color(color[0], title=color[1], scale=alt.Scale(scheme='category10')),  # Different colors for guided/non-guided
+            tooltip=[
+                alt.Tooltip('model_name:N', title='Model Name'),
+                alt.Tooltip('quantization:N', title='Quantization'),
+                alt.Tooltip('model_class:N', title='Model Class'),
+                alt.Tooltip('output_tok:Q', title='Output Tokens'),
+                alt.Tooltip('CI:N', title='95% Conf Interval'),
+            ]
+        ).properties(
+            height=600
+        )
+
+        # Add the confidence intervals as error bars
+        error_bars = chart.mark_errorbar(extent='ci', size=8, thickness=2, ticks=True).encode(
+            y=alt.Y('95_conf_minus:Q',title='Arena Score', scale=alt.Scale(domain=[0, 100])),
+            y2=alt.Y2('95_conf_plus:Q')
+        )
+
+        # Add a baseline rule at arena_score = 50
+        baseline = alt.Chart(pd.DataFrame({'y': [50]})).mark_rule(color='red', strokeDash=[5,5]).encode(
+            y='y:Q'
+        )
+
+        # Combine the score points, confidence intervals, and baseline
+        final_chart = chart + error_bars + baseline
+
+        # Display the chart in Streamlit
+        st.altair_chart(final_chart, use_container_width=True)
+
+        st.write("")
+        st.table(df_table)
 
 
 def benchmarks(): 
@@ -127,26 +137,21 @@ def benchmarks():
 
     st.divider()
 
-    #st.subheader("", divider='grey')
+    df = load_parquet_data('results')
 
-    df = get_mt_model_df('llm_judge/results/gpt-4_single')
-    #df_pair = get_mt_model_df_pair('llm_judge/results/gpt-4_pair')
-
-    mt_bench, vicuana = st.tabs(["MT-Bench Benchmark", "Vicuana Benchmark"])
+    arena_results, param_sizes, quant, guided = st.tabs([
+        "Arena Results",
+        "Varying Parameter Sizes", 
+        "Varying Quantization Levels", 
+        "Knowledge Embedding"
+        ])
     
-    with mt_bench:
 
+    with arena_results:
         st.write("")
         st.write("")
 
-        mt_bench_page(df)
-    
-    with vicuana:
-
-        st.write("")
-        st.write("")
-
-        vicuana_bench_page(df)
+        arena_results_page(df)
 
 if __name__ == "__main__":
     init_session_states()

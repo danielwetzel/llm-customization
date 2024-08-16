@@ -4,8 +4,11 @@ import numpy as np
 import altair as alt
 import os
 import sys
+import plotly.express as px
+import plotly.graph_objects as go
 
 from pages.utils.streamlit_utils import *
+
 
 def overview_page(df):
 
@@ -170,19 +173,116 @@ def framework_page(df):
     st.dataframe(df[df.test_type=='framework_comp_vllm'])
 
 
+def mt_bench_page(df): 
+
+    st.subheader("LLM Performance Benchmark - MT-Bench")
+    st.write("This section visualizes the MT-Bench Performance Benchmark for LLMs.")
+
+    st.write("")
+
+    with st.container(border=True):
+
+        all_models = df["model"].unique()
+
+        #st.write(all_models)
+
+        scores_all = []
+        for model in all_models:
+            for cat in st.session_state.MTBENCH_CATEGORIES:
+                # filter category/model, and score format error (<1% case)
+                res = df[(df["category"]==cat) & (df["model"]==model) & (df["score"] >= 0)]
+                score = res["score"].mean()
+
+                scores_all.append({"model": model, "category": cat, "score": score})
+
+        
+        models = [
+            "Llama-2-7b-chat", 
+            "Llama-2-13b-chat", 
+            "Llama-2-70b-chat", 
+            "llama-3-8B-Instruct", 
+            "gpt-3.5-turbo", 
+            "gpt-4",
+            "gpt-4-turbo", 
+            "gpt-4o",  
+            "claude-v1", 
+            "vicuna-33b-v1.3", 
+            "vicuna-13b-v1.3", 
+            "vicuna-7b-v1.3", 
+            "Llama-3-8B-Instruct_Orce_plus"]
+        
+        pre_select_models = [
+            #"Llama-2-7b-chat", 
+            #"Llama-2-13b-chat", 
+            "Llama-2-70b-chat", 
+            "llama-3-8B-Instruct", 
+            "gpt-3.5-turbo", 
+            #"gpt-4",
+            "gpt-4-turbo", 
+            "gpt-4o",]
+
+        target_models = st.multiselect("Select Models to Review", models, default=pre_select_models, key="mtbench_models", format_func=label_func)
+
+        st.divider()
+
+
+
+        scores_target = [scores_all[i] for i in range(len(scores_all)) if scores_all[i]["model"] in target_models]
+
+        # sort by target_models
+        scores_target = sorted(scores_target, key=lambda x: target_models.index(x["model"]), reverse=True)
+
+        df_score = pd.DataFrame(scores_target)
+        df_score = df_score[df_score["model"].isin(target_models)]
+
+        rename_map = {"Llama-2-7b-chat": "LLaMA-2-7B",
+                "Llama-2-13b-chat": "LLaMA-2-13B",
+                "Llama-2-70b-chat": "LLaMA-2-70B",
+                "llama-3-8B-Instruct": "LLaMA-3-8B",
+                "gpt-3.5-turbo": "GPT-3.5-Turbo",
+                "gpt-4": "GPT-4", 
+                "claude-v1": "Claude-v1",
+                "vicuna-33b-v1.3": "Vicuna-33B",
+                "vicuna-13b-v1.3": "Vicuna-13B",
+                "vicuna-7b-v1.3": "Vicuna-7B",
+                "Llama-3-8B-Instruct_Orce_plus": "Orca-Plus-8B", 
+                "gpt-4-turbo": "GPT-4-Turbo", 
+                "gpt-4o": "GPT-4o", 
+                }
+
+        for k, v in rename_map.items():
+            df_score.replace(k, v, inplace=True)
+
+    
+
+        fig = px.line_polar(df_score, r = 'score', theta = 'category', line_close = True, category_orders = {"category": st.session_state.MTBENCH_CATEGORIES},
+                    color = 'model', markers=True, color_discrete_sequence=px.colors.qualitative.Dark2, height=900)
+        
+        #fig.update_layout(legend=dict(
+        #    yanchor="top",
+        #    y=0.3,
+            #xanchor="left",
+            #x=0.99
+        #))
+
+        st.plotly_chart(fig, use_container_width=False, theme="streamlit")
+
+
 def initial_tests():
 
     
 
     st.title("LLM Emission Tests 🌍🌱")
 
-    st.caption("This is a dashboard to visualize the results of the LLM emission tests.")
+    st.caption("Here you can find results of a very early research stage.")
 
     st.subheader("", divider='grey')
 
     df = load_csv_data('emission_regression')
 
-    overview, output_tok, input_tok, params, frameworks = st.tabs(["Overview", "Output Token Impact", "Input Token Impact", "Model Parameter Impact", "Inference Framework Impact"])
+    bench_df = get_mt_model_df('llm_judge/results/gpt-4_single')
+
+    overview, mt_bench, output_tok, input_tok, params, frameworks = st.tabs(["Overview", "Early Benchmark", "Output Token Impact", "Input Token Impact", "Model Parameter Impact", "Inference Framework Impact"])
 
 
     with overview:
@@ -190,8 +290,14 @@ def initial_tests():
         st.write("")
         
         overview_page(df)
-
     
+
+    with mt_bench:
+
+        st.write("")
+        st.write("")
+
+        mt_bench_page(bench_df)
 
     with output_tok:
         st.write("")
