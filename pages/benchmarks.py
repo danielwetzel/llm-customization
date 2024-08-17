@@ -129,12 +129,8 @@ def arena_results_page(df):
         st.divider()
         st.write("")
 
-        st.table(df_table)
-
-        st.divider()
-        st.write("")
-        
-        st.dataframe(df, use_container_width=True, height=600, hide_index=True )
+        with st.expander("View Table", expanded=False):
+            st.table(df_table)
 
 def quant_page(df):
 
