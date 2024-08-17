@@ -191,7 +191,7 @@ def comp_page(df):
                 title='Breakdown of Actual Energy Consumption per 10k Prompts'
             )     
 
-        st.altair_chart(chart, use_container_width=True)
+        st.altair_chart(chart, use_container_width=True, theme="streamlit")
 
 
     
@@ -307,7 +307,7 @@ def breackdown_page(df):
             title='Breakdown of Actual Energy Consumption per 10k Prompts'
         )
 
-        st.altair_chart(stacked_bar_chart+stacked_area_chart, use_container_width=True)
+        st.altair_chart(stacked_bar_chart+stacked_area_chart, use_container_width=True, theme="streamlit")
 
     st.divider()
 
@@ -509,7 +509,7 @@ def model_param_comp_page(df):
             title=f'Energy Consumption by Model Setup'
         )
 
-        st.altair_chart(chart, use_container_width=True)
+        st.altair_chart(chart, use_container_width=True, theme="streamlit")
 
     st.divider()
 
