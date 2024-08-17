@@ -32,3 +32,7 @@ notebooks/quantization/Llama-3.1-70B-Instruct-4bit-bnb-quant/*
 notebooks/quantization/Llama-3.1-70B-Instruct-8bit-bnb-quant/*
 llm_judge/wandb/*
 *.env
+notebooks/quantization/output/*
+models/*
+notebooks/quantization/wandb/*
+notebooks/quantization/sparse_logs/*
