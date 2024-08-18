@@ -36,7 +36,7 @@ def comp_page(df):
         with label:
             label_selections = st.multiselect(label='Choose Energy Types', options=labels, default=default_labels, key='comp')
         with type:
-            display_type = st.radio("Display Type", ('Stacked', 'Grouped', 'Line'))
+            display_type = st.radio("Display Type", ('Line', 'Stacked', 'Grouped'))
 
         st.divider()
 
@@ -155,7 +155,7 @@ def comp_page(df):
 
             decrease_chart = alt.Chart(decreases_df).mark_text(align='center', fontSize=14, fontWeight='bold').encode(
                 x=alt.X('x'),
-                y=alt.Y('y:Q'),
+                y=alt.Y('y:Q'), 
                 text=alt.Text('decrease_factor:N'),
                 color=alt.Color('Energy_Type_Order', scale=alt.Scale(
                     domain=label_selections,
