@@ -141,7 +141,7 @@ def quant_page(df):
 
     st.write("")
 
-    with st.container():
+    with st.container(border=True):
         
         mod, inst, guid = st.columns([2, 1, 1])
 
@@ -276,7 +276,7 @@ def guided_page(df):
 
     st.write("")
 
-    with st.container():
+    with st.container(border=True):
         
         mod, inst, quant = st.columns([2, 1, 1])
 
@@ -409,9 +409,133 @@ def guided_page(df):
 
         # Display the chart in Streamlit
         st.altair_chart(final_chart, use_container_width=True, theme="streamlit")
-    
 
 
+
+def model_comp_page(df):
+    st.subheader("Arena Results vs. Energy Consumption")
+    st.write("This section provides an overview of how models with different quantizations compare in their Arena Score and Energy Consumption.")
+    st.write("The Judge Model was GPT-4o and the Baseline Model was GPT-4-0314")
+    st.write("")
+
+    with st.container():
+        mod, quant, guid, inst = st.columns([2, 1, 1, 1])
+
+        with mod:
+            models = st.multiselect("Models:", options=['LLaMA-3.1-70B-Instruct', 'Mistral-NeMo', 'LLaMA-3.1-8B-Instruct'], default=['LLaMA-3.1-70B-Instruct', 'Mistral-NeMo', 'LLaMA-3.1-8B-Instruct'])
+        
+        with inst:
+            instance_types = st.selectbox('Select Instance Type', ['Largest', 'Smallest'], index=0 , key='instance_type3')
+        
+        with quant:
+            quantizations = st.multiselect('Select Quantization', ['bf16', 'fp8', 'int4'], default=['bf16', 'fp8', 'int4'])
+        
+        with guid:
+            guidances = st.multiselect('Select Guidance', ['Non-guided', 'Guided'], default=['Non-guided', 'Guided'])
+        
+        st.write("")
+        st.write("")
+
+        # Filter the data based on the selections
+        model_map = {
+            'Mistral-NeMo': 'mistral_nemo',
+            'LLaMA-3.1-70B-Instruct': 'llama3_1_70b',
+            'LLaMA-3.1-8B-Instruct': 'llama3_1_8b', 
+        }
+        selected_models = [model_map[m] for m in models]
+        df_filtered = df[df['model_name'].isin(selected_models)]
+        df_filtered = df_filtered[df_filtered['quantization'].isin(quantizations)]
+        
+        if 'Largest' in instance_types:
+            df_filtered = df_filtered[df_filtered['gpu_count'] == df_filtered.groupby(['model_name', 'quantization', 'guided'])['gpu_count'].transform('max')]
+        if 'Smallest' in instance_types:
+            df_filtered = df_filtered[df_filtered['gpu_count'] == df_filtered.groupby(['model_name', 'quantization', 'guided'])['gpu_count'].transform('min')]
+        
+        if 'Guided' in guidances:
+            df_filtered_guided = df_filtered[df_filtered['guided'] == 'True']
+        else:
+            df_filtered_guided = pd.DataFrame()
+        if 'Non-guided' in guidances:
+            df_filtered_non_guided = df_filtered[df_filtered['guided'] == 'False']
+        else:
+            df_filtered_non_guided = pd.DataFrame()
+
+        # Combine guided and non-guided data
+        df_combined = pd.concat([df_filtered_non_guided, df_filtered_guided])
+
+        # Ensure the quantization order
+        quant_order = ['bf16', 'fp8', 'int4']
+        df_combined['quantization'] = pd.Categorical(df_combined['quantization'], categories=quant_order, ordered=True)
+
+        # Initialize an empty container for the final chart
+        final_chart = alt.hconcat()
+
+        model_order = ['llama3_1_70b', 'mistral_nemo', 'llama3_1_8b']
+
+        for model_name in model_order:
+            model_df = df_combined[df_combined['model_name'] == model_name]
+
+            # Create the Altair chart for Arena Score with Confidence Intervals
+            base_scores = alt.Chart(model_df).mark_point(size=100, filled=True).encode(
+                x=alt.X('quantization:N', title='Quantization'),
+                y=alt.Y('arena_score:Q', title='Arena Score', scale=alt.Scale(domain=[0, 100]), axis=alt.Axis(orient='right')),
+                color=alt.Color('guided:N', title='Guided', sort=['False', 'True'], scale=alt.Scale(domain=['False', 'True'], scheme='category10')),  # Set the order of guided/non-guided
+                tooltip=[
+                    alt.Tooltip('model_name:N', title='Model Name'),
+                    alt.Tooltip('arena_score:Q', title='Arena Score'),
+                    alt.Tooltip('CI:N', title='95% Conf Interval'),
+                    alt.Tooltip('output_tok:Q', title='AVG # Output Tokens'),
+                    alt.Tooltip('quantization:N', title='Quantization'),
+                    alt.Tooltip('guided:N', title='Guided - Knowledge Embedding'),
+                    alt.Tooltip('gpu_count:Q', title='GPU Count'),
+                    alt.Tooltip('energy_consumed:Q', title='Energy Consumed (kWh)', format='.2f'),
+                    alt.Tooltip('duration_minutes:Q', title='Time to complete 500 Questions (minutes)', format='.2f')
+                ]
+            ).properties(
+                height=600
+            )
+
+            # Add the confidence intervals as error bars
+            error_bars = base_scores.mark_errorbar(size=8, thickness=2, ticks=True).encode(
+                y=alt.Y('95_conf_minus:Q', title='Arena Score', scale=alt.Scale(domain=[0, 100]), axis=alt.Axis(orient='right')),
+                y2=alt.Y2('95_conf_plus:Q')
+            )
+
+            scores = base_scores + error_bars
+
+            # Energy consumption as bar charts on the left y-axis with adjusted width
+            energy_bars = alt.Chart(model_df).mark_bar(opacity=0.6, size=20).encode(
+                x=alt.X('quantization:N', title='Quantization'),
+                xOffset=alt.XOffset("guided:N", sort=['False', 'True']),  # Explicitly set the order
+                y=alt.Y('energy_consumed:Q', title='Energy Consumed (kWh)', scale=alt.Scale(domain=[0, 0.9]), axis=alt.Axis(orient='left')),
+                color=alt.Color('guided:N', title='Guided', sort=['False', 'True'], scale=alt.Scale(domain=['False', 'True'], scheme='category10')),  # Same colors as above
+                tooltip=[
+                    alt.Tooltip('quantization:N', title='Quantization'),
+                    alt.Tooltip('gpu_count:Q', title='GPU Count'),
+                    alt.Tooltip('energy_consumed:Q', title='Energy Consumed (kWh)', format='.2f'), 
+                    alt.Tooltip('duration_minutes:Q', title='Time to complete 500 Questions (minutes)', format='.2f')
+                ]
+            )
+
+            # Combine the performance, energy consumption charts, and confidence intervals
+            model_chart = alt.layer(energy_bars, scores).resolve_scale(
+                y='independent'
+            ).properties(
+                height=600,
+                width=100 + 1000 / len(quantizations), 
+                title=model_name
+            )
+
+            final_chart |= model_chart
+
+        # Configure legend and display the final chart
+        final_chart = final_chart.configure_legend(
+            orient='right'
+        )
+
+        st.altair_chart(final_chart, use_container_width=True, theme="streamlit")
+
+        
 
 def benchmarks(): 
     st.title("LLM Emission Tests 🌍🌱")
@@ -422,10 +546,11 @@ def benchmarks():
 
     df = load_parquet_data('results')
 
-    arena_results, quant, guided = st.tabs([
+    arena_results, quant, guided, models = st.tabs([
         "Arena Results",
         "Varying Quantization Levels", 
-        "Knowledge Embedding"
+        "Knowledge Embedding", 
+        "Model Comparison"
         ])
     
 
@@ -448,6 +573,12 @@ def benchmarks():
         st.write("")
 
         guided_page(df)
+    
+    with models:
+        st.write("")
+        st.write("")
+
+        model_comp_page(df)
 
 
 if __name__ == "__main__":
