@@ -172,6 +172,8 @@ def quant_page(df):
         else:
             df_transformed = df[df.model_name == 'llama3_1_70b']
             scale = [0, 2]
+
+        df_transformed['guided'] = df_transformed['guided'].map({1: 'True', 0: 'False'})
         
         # Apply the filter for largest or smallest instance type
         if instance_type == 'Largest':
@@ -309,6 +311,9 @@ def guided_page(df):
             scale = [0, 2]
         
 
+        df_transformed['guided'] = df_transformed['guided'].map({1: 'True', 0: 'False'})
+
+
         # Apply the filter for largest or smallest instance type
         if instance_type == 'Largest':
             df_transformed = df_transformed[df_transformed['gpu_count'] == df_transformed.groupby(['quantization', 'guided'])['gpu_count'].transform('max')]
@@ -445,6 +450,8 @@ def model_comp_page(df):
         selected_models = [model_map[m] for m in models]
         df_filtered = df[df['model_name'].isin(selected_models)]
         df_filtered = df_filtered[df_filtered['quantization'].isin(quantizations)]
+
+        df_filtered['guided'] = df_filtered['guided'].map({1: 'True', 0: 'False'})
         
         if 'Largest' in instance_types:
             df_filtered = df_filtered[df_filtered['gpu_count'] == df_filtered.groupby(['model_name', 'quantization', 'guided'])['gpu_count'].transform('max')]
@@ -545,6 +552,9 @@ def benchmarks():
     st.divider()
 
     df = load_parquet_data('results')
+    df_quant = load_parquet_data('results')
+    df_guided = load_parquet_data('results')
+    df_model = load_parquet_data('results')
 
     arena_results, quant, guided, models = st.tabs([
         "Arena Results",
@@ -565,20 +575,20 @@ def benchmarks():
         st.write("")
         st.write("")
 
-        quant_page(df)
+        quant_page(df_quant)
 
     
     with guided:
         st.write("")
         st.write("")
 
-        guided_page(df)
+        guided_page(df_guided)
     
     with models:
         st.write("")
         st.write("")
 
-        model_comp_page(df)
+        model_comp_page(df_model)
 
 
 if __name__ == "__main__":
