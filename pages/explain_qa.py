@@ -42,7 +42,7 @@ def strip_markdown_user_question(text):
     return text
 
 # Function to stream data
-def stream_text(text, delay=0.05, seq_len=4):
+def stream_text(text, delay=0.04, seq_len=4):
     """
     Yields text one word at a time with a delay.
     :param text: Full text to stream
@@ -63,18 +63,27 @@ def stream_text(text, delay=0.05, seq_len=4):
     if seq:
         yield seq
 
-def stream_answer_or_baseline(text, col, is_baseline=False, model_name="GPT-4-0314"):
+def stream_answer_or_baseline(text, col, is_baseline=False, model_name="GPT-4-0314", fast=False):
     if is_baseline:
+        st.session_state.base_printed = True
         avatar = "pages/img/robot_2.svg"
         header = f"**Assistant B — {model_name} (Baseline)**"
     else:
+        st.session_state.ans_printed = True
         avatar = "pages/img/robot.svg"
         header = f"**Assistant A — {model_name}**"
     
+    if fast:
+        delay = 0.01
+        seq_len = 8
+    else:
+        delay = 0.05
+        seq_len = 4
+
     with col:
         with st.chat_message("ans", avatar=avatar):
             with st.expander(header, expanded=True):
-                st.write_stream(stream_text(text))    
+                st.write_stream(stream_text(text, delay, seq_len))    
 
 
 
@@ -190,6 +199,8 @@ def show_chat(df):
             st.session_state.gen_judge_button_clicked = False
             st.session_state.first_gen = True
             st.session_state.first_judge = True
+            st.session_state.ans_printed = False
+            st.session_state.base_printed = False
 
             st.session_state.qa_selections = {
                 "question": selected_question_option,
@@ -245,13 +256,19 @@ def show_chat(df):
 
             if st.session_state.first_gen:
                 st.session_state.first_gen = False
-                with concurrent.futures.ThreadPoolExecutor(max_workers=2) as executor:
+                with concurrent.futures.ThreadPoolExecutor() as executor:
                     future_answer = executor.submit(stream_answer_or_baseline, filtered_row['answer'].values[0], ans, False, selected_model_name)
                     future_baseline = executor.submit(stream_answer_or_baseline, filtered_row['baseline_answer'].values[0], base, True, "GPT-4-0314")
-                    #future_answer.result()
-                    #future_baseline.result()
+
+                    add_script_run_ctx(future_answer)
+                    add_script_run_ctx(future_baseline)
+
                     for t in executor._threads:
                         add_script_run_ctx(t)
+                    
+                    for t in executor._threads:
+                        add_script_run_ctx(t)
+
 
             else:
                 with ans:

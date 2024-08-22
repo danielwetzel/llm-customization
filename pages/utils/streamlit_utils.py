@@ -35,6 +35,8 @@ def init_session_states():
         st.session_state.gen_judge_button_clicked = False
         st.session_state.first_gen = True
         st.session_state.first_judge = True
+        st.session_state.ans_printed = False
+        st.session_state.base_printed = False
 
 
 @st.cache_data
