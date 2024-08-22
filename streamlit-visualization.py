@@ -12,4 +12,4 @@ st.set_page_config(page_title="LLM Emission Tests", page_icon=':seedling:', layo
 if __name__ == "__main__":
     init_session_states()
     sidebar()
-    st.switch_page("pages/vllm_tests.py")
+    st.switch_page("pages/benchmarks.py")

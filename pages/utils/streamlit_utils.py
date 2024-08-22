@@ -22,6 +22,19 @@ def init_session_states():
     
     if 'MTBENCH_CATEGORIES' not in st.session_state:
         st.session_state.MTBENCH_CATEGORIES = ["Writing", "Roleplay", "Reasoning", "Math", "Coding", "Extraction", "STEM", "Humanities"]
+    
+    # Initialize session state for button click
+    if 'qa_selections' not in st.session_state:
+        st.session_state.qa_selections = {
+                "question": "none",
+                "model": "none",
+                "quantization": "none",
+                "guidance": "none"
+            }
+        st.session_state.gen_chat_button_clicked = False
+        st.session_state.gen_judge_button_clicked = False
+        st.session_state.first_gen = True
+        st.session_state.first_judge = True
 
 
 @st.cache_data
@@ -270,8 +283,9 @@ def sidebar():
         st.divider()
 
         st.title("Navigation")
-        st.page_link(page="pages/vllm_tests.py", label="vLLM Tests", icon="⭐")
         st.page_link(page="pages/benchmarks.py", label="Benchmarks", icon="📊")
+        st.page_link(page="pages/explain_qa.py", label="Explain Benchmark", icon="💬")
+        st.page_link(page="pages/vllm_tests.py", label="vLLM Tests", icon="⭐")
         st.page_link(page="pages/initial_tests.py", label="Early Tests", icon="⏳")
 
         st.write("")
