@@ -10,7 +10,7 @@ import re
 import time
 
 import concurrent.futures
-from streamlit.runtime.scriptrunner import add_script_run_ctx
+from streamlit.runtime.scriptrunner import add_script_run_ctx, get_script_run_ctx
 
 from pages.utils.streamlit_utils import *
 
@@ -42,7 +42,7 @@ def strip_markdown_user_question(text):
     return text
 
 # Function to stream data
-def stream_text(text, delay=0.04, seq_len=4):
+def stream_text(text, delay=0.04, seq_len=3):
     """
     Yields text one word at a time with a delay.
     :param text: Full text to stream
@@ -63,27 +63,94 @@ def stream_text(text, delay=0.04, seq_len=4):
     if seq:
         yield seq
 
-def stream_answer_or_baseline(text, col, is_baseline=False, model_name="GPT-4-0314", fast=False):
-    if is_baseline:
-        st.session_state.base_printed = True
-        avatar = "pages/img/robot_2.svg"
-        header = f"**Assistant B — {model_name} (Baseline)**"
-    else:
-        st.session_state.ans_printed = True
-        avatar = "pages/img/robot.svg"
-        header = f"**Assistant A — {model_name}**"
+def stream_answer(text, col, model_name="mistral_nemo", fast=False):
+
+    st.session_state.ans_printed = True
+    avatar = "pages/img/robot.svg"
+    header = f"**Assistant A — {model_name}**"
     
     if fast:
-        delay = 0.01
+        delay = 0.02
         seq_len = 8
     else:
-        delay = 0.05
-        seq_len = 4
+        delay = 0.04
+        seq_len = 3
 
     with col:
         with st.chat_message("ans", avatar=avatar):
             with st.expander(header, expanded=True):
-                st.write_stream(stream_text(text, delay, seq_len))    
+                st.write_stream(stream_text(text, delay, seq_len))
+    
+    return 'answer'
+
+
+def stream_baseline(text, col, model_name="GPT-4-0314", fast=False):
+
+    st.session_state.base_printed = True
+    avatar = "pages/img/robot_2.svg"
+    header = f"**Assistant B — {model_name} (Baseline)**"
+
+    
+    if fast:
+        delay = 0.02
+        seq_len = 8
+    else:
+        delay = 0.04
+        seq_len = 3
+
+    with col:
+        with st.chat_message("ans", avatar=avatar):
+            with st.expander(header, expanded=True):
+                st.write_stream(stream_text(text, delay, seq_len))   
+    
+    return 'baseline'
+
+
+@st.fragment
+def write_answer_baseline(filtered_row, selected_model_name):
+
+    ans, base = st.columns([2, 2], gap="medium")
+
+    if st.session_state.first_gen:
+        st.session_state.first_gen = False
+
+        results = []
+
+        ctx = get_script_run_ctx()
+
+        with concurrent.futures.ThreadPoolExecutor() as executor:
+            futures = []
+            future_answer = executor.submit(stream_answer, filtered_row['answer'].values[0], ans, selected_model_name)
+            future_baseline = executor.submit(stream_baseline, filtered_row['baseline_answer'].values[0], base, "GPT-4-0314")
+
+            futures.append(future_answer)
+            futures.append(future_baseline)
+
+            for t in executor._threads:
+                add_script_run_ctx(t, ctx)
+                
+            
+        for future in concurrent.futures.as_completed(futures):
+            try:
+                res = future.result()
+                results.append(res)
+                #st.write(f'res: {res}')
+
+            except:
+                # if one of the threads fails, we rerun the whole fragment
+                # Since first_gen will be false then, we will simply display both chat boxes without the animation
+                # Therefore 
+                st.rerun()
+
+    else:
+        with ans:
+            with st.chat_message("assistant", avatar="pages/img/robot.svg"):
+                with st.expander(f"**Assistant A — {selected_model_name}**", expanded=True):
+                    st.write(filtered_row['answer'].values[0])     
+        with base:
+            with st.chat_message("assistant_b", avatar="pages/img/robot_2.svg"):
+                with st.expander(f"**Assistant B — GPT-4-0314 (Baseline)**", expanded=True):
+                    st.write(filtered_row['baseline_answer'].values[0]) 
 
 
 
@@ -252,33 +319,8 @@ def show_chat(df):
 
             st.divider()
 
-            ans, base = st.columns([2, 2], gap="medium")
 
-            if st.session_state.first_gen:
-                st.session_state.first_gen = False
-                with concurrent.futures.ThreadPoolExecutor() as executor:
-                    future_answer = executor.submit(stream_answer_or_baseline, filtered_row['answer'].values[0], ans, False, selected_model_name)
-                    future_baseline = executor.submit(stream_answer_or_baseline, filtered_row['baseline_answer'].values[0], base, True, "GPT-4-0314")
-
-                    add_script_run_ctx(future_answer)
-                    add_script_run_ctx(future_baseline)
-
-                    for t in executor._threads:
-                        add_script_run_ctx(t)
-                    
-                    for t in executor._threads:
-                        add_script_run_ctx(t)
-
-
-            else:
-                with ans:
-                    with st.chat_message("assistant", avatar="pages/img/robot.svg"):
-                        with st.expander(f"**Assistant A — {selected_model_name}**", expanded=True):
-                            st.write(filtered_row['answer'].values[0])     
-                with base:
-                    with st.chat_message("assistant_b", avatar="pages/img/robot_2.svg"):
-                        with st.expander(f"**Assistant B — GPT-4-0314 (Baseline)**", expanded=True):
-                            st.write(filtered_row['baseline_answer'].values[0]) 
+            write_answer_baseline(filtered_row, selected_model_name)
     
 
             st.divider()
