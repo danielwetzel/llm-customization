@@ -1,0 +1,13 @@
+model_list:
+  - model_name: bedrock-llama3-1-405b
+    litellm_params:
+      model: meta.llama3-1-405b-instruct-v1:0
+      aws_region_name: "us-west-2"
+      aws_access_key_id: "EMPTY"
+      aws_secret_access_key: "EMPTY"
+  - model_name: bedrock-mistral2-large
+    litellm_params:
+      model: mistral.mistral-large-2407-v1:0
+      aws_region_name: "us-west-2"
+      aws_access_key_id: "EMPTY"
+      aws_secret_access_key: "EMPTY"
