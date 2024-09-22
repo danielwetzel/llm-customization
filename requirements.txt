@@ -4,4 +4,4 @@ altair
 pandas
 numpy
 pytz
-sklearn
+scikit-learn
