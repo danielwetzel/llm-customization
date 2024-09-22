@@ -21,3 +21,4 @@ openai
 python-dotenv
 shortuuid
 pytz
+sklearn
