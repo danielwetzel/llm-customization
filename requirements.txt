@@ -3,3 +3,4 @@ plotly
 altair
 pandas
 numpy
+pytz
