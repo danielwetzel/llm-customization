@@ -1,6 +1,6 @@
 accelerate
 bitsandbytes
-codecarbon
+codecarbon==2.6.0
 datasets
 ipywidgets
 jupyter

@@ -52,7 +52,7 @@ def framework_page(output_comp_df, input_comp_df, param_comp_df):
         param_feature = param_comp_df[['parameters']]
 
         # Define the Y values for the regressions
-        input_target = input_comp_df[['total_energy_10k_prompts_Wh']]
+        input_target = input_comp_df[['total_energy_100k_output_tokens_Wh']]
         output_target = output_comp_df[['total_energy_10k_prompts_Wh']]
         param_target = param_comp_df[['total_energy_7500_prompts_Wh']]
 
@@ -61,7 +61,7 @@ def framework_page(output_comp_df, input_comp_df, param_comp_df):
         output_model = fit_regression(X=output_feature, y=output_target, regression_type='polynomial', polynomial_degree=2)
         param_model = fit_regression(X=param_feature, y=param_target, regression_type='exponential')
 
-        input_predict_values = {'avg_in_tok': [10, 50, 250, 500, 1000, 1500, 2000, 3000, 4000, 5000, 10000]}
+        input_predict_values = {'avg_in_tok': [10, 50, 250, 500, 1000, 1500, 2000, 3000, 4000, 5000, 10000, 30000, 55000, 75000]}
         output_predict_values = {'avg_out_tok': [10, 50, 250, 500, 1000, 1500, 2000]}
         param_predict_values = {'parameters': [7, 10, 25, 45, 50, 75]}
 
@@ -69,7 +69,7 @@ def framework_page(output_comp_df, input_comp_df, param_comp_df):
         input_pred_df = predict_values(model=input_model, 
                                         pred_value_dict=input_predict_values, 
                                         type='polynomial', 
-                                        target='total_energy_10k_prompts_Wh')
+                                        target='total_energy_100k_output_tokens_Wh')
 
         output_pred_df = predict_values(model=output_model, 
                                         pred_value_dict=output_predict_values, 
@@ -86,7 +86,7 @@ def framework_page(output_comp_df, input_comp_df, param_comp_df):
         input_df = combine_actual_predict_df(actual_df=input_comp_df, 
                                                   predict_df=input_pred_df,
                                                     feature='avg_in_tok', 
-                                                    target='total_energy_10k_prompts_Wh')
+                                                    target='total_energy_100k_output_tokens_Wh')
 
         output_df = combine_actual_predict_df(actual_df=output_comp_df, 
                                                   predict_df=output_pred_df,
@@ -180,14 +180,14 @@ def framework_page(output_comp_df, input_comp_df, param_comp_df):
         start_pred_df = predict_values(model=input_model, 
                                 pred_value_dict={'avg_in_tok': [input_tok_start]}, 
                                 type='polynomial', 
-                                target='total_energy_10k_prompts_Wh')
+                                target='total_energy_100k_output_tokens_Wh')
         
         start_pred_df = pd.concat([start_pred_df, pd.DataFrame({'Type': ['Start']})], axis=1, copy=False)
         
         end_pred_df = predict_values(model=input_model, 
                                 pred_value_dict={'avg_in_tok': [input_tok_end]}, 
                                 type='polynomial', 
-                                target='total_energy_10k_prompts_Wh')
+                                target='total_energy_100k_output_tokens_Wh')
         
         end_pred_df = pd.concat([end_pred_df, pd.DataFrame({'Type': ['End']})], axis=1, copy=False)
 
@@ -198,7 +198,7 @@ def framework_page(output_comp_df, input_comp_df, param_comp_df):
             # Create Altair chart
             input_base = alt.Chart(input_df[input_df['Type'] == 'Actual']).mark_point(size=20, filled=True).encode(
                 x=alt.X('avg_in_tok', title='Average Input Tokens per Prompt'),
-                y=alt.Y('total_energy_10k_prompts_Wh', axis=None),
+                y=alt.Y('total_energy_100k_output_tokens_Wh', axis=None),
                 tooltip=['avg_in_tok', 'Type']
             ).properties(
                 width=1200,
@@ -209,14 +209,14 @@ def framework_page(output_comp_df, input_comp_df, param_comp_df):
             # Highlight predicted values
             input_predicted = alt.Chart(input_df[input_df['Type'].isin(['Predicted', 'Start', 'End'])]).mark_point(size=1, filled=False).encode(
                 x=alt.X('avg_in_tok', title='Average Input Tokens per Prompt'), 
-                y=alt.Y('total_energy_10k_prompts_Wh', axis=None),
+                y=alt.Y('total_energy_100k_output_tokens_Wh', axis=None),
                 tooltip=['avg_in_tok', 'Type']
             )
 
             # Highlight predicted values
             input_highlight = alt.Chart(input_df[input_df['Type'].isin(['Start', 'End'])]).mark_point(size=300, filled=False, strokeWidth=4).encode(
                 x=alt.X('avg_in_tok', title='Average Input Tokens per Prompt'), 
-                y=alt.Y('total_energy_10k_prompts_Wh', axis=None),
+                y=alt.Y('total_energy_100k_output_tokens_Wh', axis=None),
                 color=alt.Color('Type', title='Input Token Points', 
                                 scale=alt.Scale(
                                 domain=["Start", "End"],
@@ -225,7 +225,7 @@ def framework_page(output_comp_df, input_comp_df, param_comp_df):
                 tooltip=['avg_in_tok', 'Type']
             )
 
-            input_regression = input_predicted.transform_regression('avg_in_tok', 'total_energy_10k_prompts_Wh', method="quad").mark_line()
+            input_regression = input_predicted.transform_regression('avg_in_tok', 'total_energy_100k_output_tokens_Wh', method="quad").mark_line()
 
             # Combine charts
             input_chart = input_highlight + input_base + input_predicted + input_regression
@@ -450,7 +450,7 @@ def framework():
     st.divider()
 
     output_comp_df = clean_output_data(load_csv_data('emission_regression_vllm'))
-    input_comp_df = clean_input_data(load_csv_data('emission_regression'))
+    input_comp_df = clean_input_data(load_csv_data('input_tok_summary_vllm'))
     param_comp_df = clean_params_data(load_csv_data('params_test'))['lowest_energy_setup']
 
     # arena_results = st.tabs([

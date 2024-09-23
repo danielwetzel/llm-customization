@@ -108,26 +108,29 @@ def get_mt_model_df_pair(file_path):
 @st.cache_data
 def clean_input_data(df):
 
-    df = df[df['test_type'] == 'Input-tok']
+    df = df[df['test_type'] == 'Input-tok-vllm']
 
-    df['ram_energy_10k_prompts_Wh'] = df['actual_ram_energy_per_10k_prompts'] * 1000
-    df['gpu_energy_10k_prompts_Wh'] = df['actual_gpu_energy_per_10k_prompts'] * 1000
-    df['cpu_energy_10k_prompts_Wh'] = df['actual_cpu_energy_per_10k_prompts'] * 1000
-    df['total_energy_10k_prompts_Wh'] = df['cpu_energy_10k_prompts_Wh'] + df['gpu_energy_10k_prompts_Wh'] + df['ram_energy_10k_prompts_Wh']
+    df['total_energy_100k_output_tokens_Wh'] = df['actual_total_energy_per_100k_output_tokens']
+    df['ram_energy_100k_output_tokens_Wh'] = df['actual_ram_energy_per_100k_output_tokens'] 
+    df['gpu_energy_100k_output_tokens_Wh'] = df['actual_gpu_energy_per_100k_output_tokens'] 
+    df['cpu_energy_100k_output_tokens_Wh'] = df['actual_cpu_energy_per_100k_output_tokens'] 
+    df['gpu_idle_energy_100k_output_tokens_Wh'] = df['actual_idle_gpu_energy_per_100k_output_tokens'] 
+    df['gpu_non_idle_energy_100k_output_tokens_Wh'] = df['actual_non_idle_gpu_energy_per_100k_output_tokens'] 
+    df['prompt_per_sec'] = df['num_prompts'] / df['total_time']
 
     df = df[['test_type', 
-            'model_type', 
-            'parameters',
-            'num_examples', 
-            'num_prompts', 
-            'total_out_tok', 
-            'total_in_tok', 
-            'avg_out_tok', 
-            'avg_in_tok', 
-            'total_energy_10k_prompts_Wh', 
-            'ram_energy_10k_prompts_Wh', 
-            'gpu_energy_10k_prompts_Wh', 
-            'cpu_energy_10k_prompts_Wh']]
+                                                            'model_type', 
+                                                            'parameters',
+                                                            'num_examples', 
+                                                            'num_prompts', 
+                                                            'total_out_tok', 
+                                                            'total_in_tok', 
+                                                            'avg_out_tok', 
+                                                            'avg_in_tok', 
+                                                            'total_energy_100k_output_tokens_Wh', 
+                                                            'ram_energy_100k_output_tokens_Wh', 
+                                                            'gpu_energy_100k_output_tokens_Wh', 
+                                                            'cpu_energy_100k_output_tokens_Wh']]
 
     return df
 
