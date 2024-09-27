@@ -1,0 +1,2 @@
+#! /usr/bin/bash
+docker run --runtime nvidia --gpus all -v ~/.cache/huggingface:/root/.cache/huggingface -p 8000:8000 --ipc=host vllm/vllm-openai:latest --model meta-llama/Meta-Llama-3.1-8B-Instruct --tensor-parallel-size 4 --enable-chunked-prefill --served-model-name llama3_1_8b

@@ -2,8 +2,8 @@
 
 pip install -r dev_requirements.txt
 
-git config --global user.email "daniel@d-wetzel.de"
-git config --global user.name "Daniel Wetzel"
+git config --global user.email "test@d-wetzel.de"
+git config --global user.name "Thesis Reviewer"
 git config --global credential.helper store
 
 git submodule init

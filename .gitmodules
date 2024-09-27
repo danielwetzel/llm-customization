@@ -1,15 +1,3 @@
-[submodule "llm_judge/FastChat"]
-	path = llm_judge/FastChat
-	url = https://github.com/danielwetzel/FastChat.git
-[submodule "vllm"]
-	path = vllm
-	url = https://github.com/danielwetzel/vllm.git
-[submodule "notebooks/fsdp_qlora"]
-	path = notebooks/fsdp_qlora
-	url = https://github.com/danielwetzel/fsdp_qlora.git
 [submodule "llm_judge/arena-hard-auto"]
 	path = llm_judge/arena-hard-auto
 	url = https://github.com/danielwetzel/arena-hard-auto.git
-[submodule "AutoGPTQ"]
-	path = AutoGPTQ
-	url = https://github.com/danielwetzel/AutoGPTQ.git

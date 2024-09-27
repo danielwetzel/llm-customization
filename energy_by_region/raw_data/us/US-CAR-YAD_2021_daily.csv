@@ -1,0 +1,366 @@
+Datetime (UTC),Country,Zone Name,Zone Id,Carbon Intensity gCO₂eq/kWh (direct),Carbon Intensity gCO₂eq/kWh (LCA),Low Carbon Percentage,Renewable Percentage,Data Source
+2021-01-01 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,0.00,24.00,100.00,100.00,eia.gov
+2021-01-02 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,0.00,24.00,100.00,100.00,eia.gov
+2021-01-03 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,0.00,24.00,100.00,100.00,eia.gov
+2021-01-04 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,0.00,24.00,100.00,100.00,eia.gov
+2021-01-05 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,0.00,24.00,100.00,100.00,eia.gov
+2021-01-06 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,0.00,24.00,100.00,100.00,eia.gov
+2021-01-07 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,7.10,32.06,98.92,98.00,eia.gov
+2021-01-08 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,0.06,24.07,99.99,99.98,eia.gov
+2021-01-09 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,1.26,25.42,99.81,99.60,eia.gov
+2021-01-10 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,3.40,27.85,99.46,98.84,eia.gov
+2021-01-11 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,0.95,25.07,99.87,99.77,eia.gov
+2021-01-12 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,0.83,24.94,99.88,99.70,eia.gov
+2021-01-13 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,5.81,30.57,99.08,98.01,eia.gov
+2021-01-14 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,4.77,29.39,99.25,98.29,eia.gov
+2021-01-15 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,9.85,35.12,98.56,97.29,eia.gov
+2021-01-16 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,1.99,26.25,99.70,99.42,eia.gov
+2021-01-17 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,2.24,26.52,99.67,99.31,eia.gov
+2021-01-18 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,0.47,24.54,99.91,99.79,eia.gov
+2021-01-19 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,2.32,26.63,99.64,99.27,eia.gov
+2021-01-20 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,0.81,24.92,99.86,99.60,eia.gov
+2021-01-21 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,0.00,24.00,100.00,100.00,eia.gov
+2021-01-22 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,0.00,24.00,100.00,100.00,eia.gov
+2021-01-23 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,0.00,24.00,100.00,100.00,eia.gov
+2021-01-24 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,0.00,24.00,100.00,100.00,eia.gov
+2021-01-25 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,0.00,24.00,100.00,100.00,eia.gov
+2021-01-26 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,0.00,24.00,100.00,100.00,eia.gov
+2021-01-27 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,0.00,24.00,100.00,100.00,eia.gov
+2021-01-28 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,0.00,24.00,100.00,100.00,eia.gov
+2021-01-29 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,0.00,24.00,100.00,100.00,eia.gov
+2021-01-30 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,0.00,24.00,100.00,100.00,eia.gov
+2021-01-31 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,0.00,24.00,100.00,100.00,eia.gov
+2021-02-01 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,0.00,24.00,100.00,100.00,eia.gov
+2021-02-02 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,0.00,24.00,100.00,100.00,eia.gov
+2021-02-03 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,1.94,26.17,99.73,99.47,eia.gov
+2021-02-04 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,2.86,27.21,99.59,99.14,eia.gov
+2021-02-05 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,0.00,24.00,100.00,100.00,eia.gov
+2021-02-06 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,0.03,24.04,100.00,99.99,eia.gov
+2021-02-07 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,0.00,24.00,100.00,100.00,eia.gov
+2021-02-08 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,3.12,27.52,99.53,98.98,eia.gov
+2021-02-09 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,0.43,24.49,99.94,99.89,eia.gov
+2021-02-10 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,0.00,24.00,100.00,100.00,eia.gov
+2021-02-11 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,0.00,24.00,100.00,100.00,eia.gov
+2021-02-12 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,0.00,24.00,100.00,100.00,eia.gov
+2021-02-13 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,1.39,25.57,99.79,99.66,eia.gov
+2021-02-14 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,0.00,24.00,100.00,100.00,eia.gov
+2021-02-15 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,21.18,47.91,96.87,94.92,eia.gov
+2021-02-16 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,54.03,84.24,92.77,86.45,eia.gov
+2021-02-17 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,67.29,98.55,91.04,84.10,eia.gov
+2021-02-18 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,29.20,55.59,96.03,93.38,eia.gov
+2021-02-19 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,5.20,29.58,99.28,98.82,eia.gov
+2021-02-20 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,12.46,37.86,98.36,96.49,eia.gov
+2021-02-21 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,7.36,32.24,98.95,97.61,eia.gov
+2021-02-22 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,6.09,30.90,99.07,98.23,eia.gov
+2021-02-23 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,7.29,32.12,98.94,97.05,eia.gov
+2021-02-24 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,6.98,31.77,98.97,97.00,eia.gov
+2021-02-25 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,6.67,31.43,98.89,96.33,eia.gov
+2021-02-26 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,0.21,24.24,99.96,99.91,eia.gov
+2021-02-27 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,3.38,27.84,99.32,97.61,eia.gov
+2021-02-28 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,0.06,24.07,99.99,99.94,eia.gov
+2021-03-01 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,0.00,24.00,100.00,100.00,eia.gov
+2021-03-02 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,0.00,24.00,100.00,100.00,eia.gov
+2021-03-03 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,1.49,25.68,99.74,99.24,eia.gov
+2021-03-04 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,1.06,25.21,99.79,99.29,eia.gov
+2021-03-05 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,1.71,25.96,99.67,98.96,eia.gov
+2021-03-06 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,0.00,24.00,100.00,100.00,eia.gov
+2021-03-07 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,0.00,24.00,100.00,100.00,eia.gov
+2021-03-08 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,0.63,24.71,99.89,99.72,eia.gov
+2021-03-09 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,0.56,24.64,99.90,99.73,eia.gov
+2021-03-10 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,0.00,24.00,100.00,100.00,eia.gov
+2021-03-11 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,2.32,26.63,99.58,98.89,eia.gov
+2021-03-12 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,2.30,26.59,99.60,98.92,eia.gov
+2021-03-13 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,0.00,24.00,100.00,100.00,eia.gov
+2021-03-14 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,0.00,24.00,100.00,100.00,Electricity Maps Estimation; eia.gov
+2021-03-15 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,0.00,24.00,100.00,100.00,Electricity Maps Estimation; eia.gov
+2021-03-16 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,0.00,24.00,100.00,100.00,eia.gov
+2021-03-17 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,0.00,24.00,100.00,100.00,eia.gov
+2021-03-18 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,41.51,69.81,93.39,83.05,eia.gov
+2021-03-19 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,0.00,24.00,100.00,100.00,eia.gov
+2021-03-20 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,0.00,24.00,100.00,100.00,eia.gov
+2021-03-21 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,0.04,24.04,99.99,99.98,eia.gov
+2021-03-22 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,4.07,28.63,99.31,98.49,eia.gov
+2021-03-23 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,4.02,28.66,99.23,98.47,eia.gov
+2021-03-24 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,0.14,24.16,99.97,99.95,eia.gov
+2021-03-25 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,8.06,33.26,98.57,97.26,eia.gov
+2021-03-26 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,0.00,24.00,100.00,100.00,eia.gov
+2021-03-27 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,3.17,27.64,99.42,98.68,eia.gov
+2021-03-28 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,0.04,24.04,99.99,99.98,eia.gov
+2021-03-29 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,5.86,30.76,98.87,97.25,eia.gov
+2021-03-30 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,4.12,28.73,99.23,98.24,eia.gov
+2021-03-31 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,0.32,24.36,99.94,99.87,eia.gov
+2021-04-01 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,5.94,30.84,98.88,97.41,eia.gov
+2021-04-02 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,1.84,26.11,99.67,99.33,eia.gov
+2021-04-03 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,6.81,31.82,98.77,97.35,eia.gov
+2021-04-04 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,8.10,33.36,98.41,96.28,eia.gov
+2021-04-05 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,11.75,37.62,97.66,94.81,eia.gov
+2021-04-06 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,7.65,32.83,98.43,95.88,eia.gov
+2021-04-07 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,2.59,27.01,99.46,98.62,eia.gov
+2021-04-08 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,1.69,25.92,99.66,98.89,eia.gov
+2021-04-09 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,2.64,27.02,99.46,98.34,eia.gov
+2021-04-10 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,1.79,26.04,99.63,98.77,eia.gov
+2021-04-11 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,0.00,24.00,100.00,100.00,eia.gov
+2021-04-12 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,3.41,27.85,99.31,97.39,eia.gov
+2021-04-13 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,5.05,29.68,99.01,96.45,eia.gov
+2021-04-14 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,3.88,28.37,99.25,97.47,eia.gov
+2021-04-15 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,0.00,24.00,100.00,100.00,eia.gov
+2021-04-16 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,1.54,25.70,99.69,98.45,eia.gov
+2021-04-17 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,0.40,24.45,99.92,99.69,eia.gov
+2021-04-18 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,1.82,26.00,99.65,98.22,eia.gov
+2021-04-19 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,1.19,25.37,99.75,99.21,eia.gov
+2021-04-20 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,1.38,25.54,99.73,98.90,eia.gov
+2021-04-21 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,0.50,24.56,99.90,99.60,eia.gov
+2021-04-22 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,7.34,32.32,98.49,94.37,eia.gov
+2021-04-23 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,4.30,28.89,99.13,97.02,eia.gov
+2021-04-24 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,0.00,24.00,100.00,100.00,eia.gov
+2021-04-25 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,2.49,26.90,99.49,98.74,eia.gov
+2021-04-26 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,2.94,27.41,99.41,98.57,eia.gov
+2021-04-27 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,0.00,24.00,100.00,100.00,eia.gov
+2021-04-28 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,10.88,36.01,98.23,95.76,eia.gov
+2021-04-29 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,10.30,35.38,98.38,96.34,eia.gov
+2021-04-30 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,14.05,39.46,97.79,95.48,eia.gov
+2021-05-01 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,24.00,50.80,95.76,90.01,eia.gov
+2021-05-02 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,20.94,47.41,96.28,90.25,eia.gov
+2021-05-03 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,6.76,31.50,98.91,97.43,eia.gov
+2021-05-04 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,20.66,47.03,96.48,91.55,eia.gov
+2021-05-05 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,0.00,24.00,100.00,100.00,eia.gov
+2021-05-06 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,0.00,24.00,100.00,100.00,eia.gov
+2021-05-07 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,27.36,53.72,95.43,84.97,eia.gov
+2021-05-08 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,16.35,41.88,97.16,90.66,eia.gov
+2021-05-09 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,39.38,66.82,93.30,76.68,eia.gov
+2021-05-10 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,35.50,63.18,93.91,82.23,eia.gov
+2021-05-11 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,31.34,58.41,95.00,85.65,eia.gov
+2021-05-12 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,47.33,76.56,92.13,78.73,eia.gov
+2021-05-13 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,16.53,42.38,97.11,92.37,eia.gov
+2021-05-14 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,12.72,38.12,97.62,92.46,eia.gov
+2021-05-15 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,19.33,45.49,96.31,87.88,eia.gov
+2021-05-16 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,20.44,46.65,96.72,89.30,eia.gov
+2021-05-17 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,7.41,32.18,98.55,93.53,eia.gov
+2021-05-18 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,31.55,60.09,93.63,80.14,eia.gov
+2021-05-19 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,30.05,57.81,94.55,82.38,eia.gov
+2021-05-20 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,23.24,50.35,95.64,85.65,eia.gov
+2021-05-21 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,26.97,54.50,95.12,84.76,eia.gov
+2021-05-22 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,18.27,44.56,96.62,87.96,eia.gov
+2021-05-23 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,5.37,30.00,99.16,97.55,eia.gov
+2021-05-24 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,12.31,37.68,98.13,95.04,eia.gov
+2021-05-25 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,29.29,56.74,95.85,90.75,eia.gov
+2021-05-26 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,5.08,29.65,99.30,98.45,eia.gov
+2021-05-27 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,16.77,42.81,97.50,94.22,eia.gov
+2021-05-28 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,39.57,68.56,93.89,85.75,eia.gov
+2021-05-29 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,,,,,Data is not complete enough to be published.
+2021-05-30 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,35.68,63.68,92.97,69.68,eia.gov
+2021-05-31 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,39.47,67.71,92.32,65.59,eia.gov
+2021-06-01 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,19.95,46.22,96.48,86.72,eia.gov
+2021-06-02 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,12.23,37.81,97.89,93.76,eia.gov
+2021-06-03 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,14.10,40.00,97.65,94.43,eia.gov
+2021-06-04 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,29.17,57.14,95.28,89.89,eia.gov
+2021-06-05 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,28.11,55.90,95.64,92.07,eia.gov
+2021-06-06 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,,,,,Data is not complete enough to be published.
+2021-06-07 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,9.13,34.27,98.63,97.31,eia.gov
+2021-06-08 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,26.06,52.96,95.82,89.54,eia.gov
+2021-06-09 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,46.26,75.86,93.39,86.66,eia.gov
+2021-06-10 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,25.73,52.81,96.39,92.51,eia.gov
+2021-06-11 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,55.19,85.99,92.09,84.46,eia.gov
+2021-06-12 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,100.17,136.45,85.39,70.34,eia.gov
+2021-06-13 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,,,,,Data is not complete enough to be published.
+2021-06-14 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,,,,,Data is not complete enough to be published.
+2021-06-15 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,19.29,45.74,96.95,92.89,eia.gov
+2021-06-16 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,14.98,40.91,97.61,94.43,eia.gov
+2021-06-17 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,11.98,37.49,98.09,95.60,eia.gov
+2021-06-18 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,14.40,40.27,97.74,95.29,eia.gov
+2021-06-19 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,36.83,65.78,93.80,85.22,eia.gov
+2021-06-20 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,39.77,68.64,93.40,83.39,eia.gov
+2021-06-21 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,52.73,83.35,91.91,82.08,eia.gov
+2021-06-22 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,84.45,118.84,88.08,77.77,eia.gov
+2021-06-23 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,,,,,Data is not complete enough to be published.
+2021-06-24 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,89.44,123.99,86.84,68.52,eia.gov
+2021-06-25 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,88.21,122.66,87.11,69.90,eia.gov
+2021-06-26 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,118.73,157.86,82.32,63.99,eia.gov
+2021-06-27 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,,,,,Data is not complete enough to be published.
+2021-06-28 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,,,,,Data is not complete enough to be published.
+2021-06-29 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,47.04,76.77,93.38,87.23,eia.gov
+2021-06-30 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,37.92,66.48,94.74,89.88,eia.gov
+2021-07-01 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,35.19,63.71,94.92,91.21,eia.gov
+2021-07-02 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,47.37,77.08,93.34,86.72,eia.gov
+2021-07-03 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,64.62,96.57,90.24,77.61,eia.gov
+2021-07-04 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,66.76,98.67,90.01,74.83,eia.gov
+2021-07-05 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,78.34,111.48,88.71,72.69,eia.gov
+2021-07-06 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,62.94,95.09,90.60,81.85,eia.gov
+2021-07-07 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,35.16,63.80,94.64,89.70,eia.gov
+2021-07-08 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,13.39,39.15,97.95,96.03,eia.gov
+2021-07-09 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,13.20,38.91,98.05,96.40,eia.gov
+2021-07-10 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,,,,,Data is not complete enough to be published.
+2021-07-11 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,71.67,104.84,89.00,77.62,eia.gov
+2021-07-12 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,42.42,72.01,93.62,88.14,eia.gov
+2021-07-13 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,44.22,73.89,92.77,84.86,eia.gov
+2021-07-14 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,,,,,Data is not complete enough to be published.
+2021-07-15 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,50.19,80.32,92.62,85.60,eia.gov
+2021-07-16 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,77.69,111.47,88.88,80.43,eia.gov
+2021-07-17 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,60.55,92.46,90.92,83.13,eia.gov
+2021-07-18 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,87.76,123.40,86.63,74.71,eia.gov
+2021-07-19 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,,,,,Data is not complete enough to be published.
+2021-07-20 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,39.50,68.89,93.60,86.34,eia.gov
+2021-07-21 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,33.22,61.53,94.79,89.35,eia.gov
+2021-07-22 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,54.11,85.27,91.74,84.18,eia.gov
+2021-07-23 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,68.98,101.95,89.64,80.30,eia.gov
+2021-07-24 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,113.91,153.13,82.19,64.55,eia.gov
+2021-07-25 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,,,,,Data is not complete enough to be published.
+2021-07-26 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,39.95,68.55,93.91,87.07,eia.gov
+2021-07-27 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,32.25,60.06,95.04,89.99,eia.gov
+2021-07-28 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,,,,,Data is not complete enough to be published.
+2021-07-29 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,21.68,48.36,96.89,93.93,eia.gov
+2021-07-30 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,25.14,51.67,96.20,92.80,eia.gov
+2021-07-31 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,24.20,50.84,96.37,92.81,eia.gov
+2021-08-01 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,16.74,43.07,97.19,93.93,eia.gov
+2021-08-02 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,31.69,59.60,95.04,89.11,eia.gov
+2021-08-03 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,,,,,Data is not complete enough to be published.
+2021-08-04 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,,,,,Data is not complete enough to be published.
+2021-08-05 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,69.70,102.21,88.96,73.66,eia.gov
+2021-08-06 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,,,,,Data is not complete enough to be published.
+2021-08-07 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,56.01,86.25,90.88,77.22,eia.gov
+2021-08-08 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,57.58,88.44,90.90,76.57,eia.gov
+2021-08-09 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,,,,,Data is not complete enough to be published.
+2021-08-10 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,,,,,Data is not complete enough to be published.
+2021-08-11 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,56.58,86.79,91.77,83.70,eia.gov
+2021-08-12 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,74.13,106.28,88.82,78.44,eia.gov
+2021-08-13 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,70.83,102.45,89.20,79.35,eia.gov
+2021-08-14 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,,,,,Data is not complete enough to be published.
+2021-08-15 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,63.74,94.90,90.24,77.89,eia.gov
+2021-08-16 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,18.55,44.59,97.11,93.89,eia.gov
+2021-08-17 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,0.00,24.00,100.00,100.00,eia.gov
+2021-08-18 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,0.00,24.00,100.00,100.00,eia.gov
+2021-08-19 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,0.00,24.00,100.00,100.00,eia.gov
+2021-08-20 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,0.00,24.00,100.00,100.00,eia.gov
+2021-08-21 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,26.36,53.87,95.87,91.55,eia.gov
+2021-08-22 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,12.43,37.75,98.14,95.38,eia.gov
+2021-08-23 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,17.65,43.50,97.37,93.64,eia.gov
+2021-08-24 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,45.50,75.35,93.29,87.36,eia.gov
+2021-08-25 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,30.01,57.91,95.50,91.30,eia.gov
+2021-08-26 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,25.32,51.87,96.10,91.99,eia.gov
+2021-08-27 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,67.52,100.07,89.93,81.43,eia.gov
+2021-08-28 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,,,,,Data is not complete enough to be published.
+2021-08-29 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,,,,,Data is not complete enough to be published.
+2021-08-30 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,62.87,93.80,90.17,82.70,eia.gov
+2021-08-31 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,19.02,44.94,97.22,94.17,eia.gov
+2021-09-01 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,33.59,61.24,94.35,86.91,eia.gov
+2021-09-02 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,74.05,106.49,88.18,73.16,eia.gov
+2021-09-03 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,,,,,Data is not complete enough to be published.
+2021-09-04 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,56.91,87.20,90.52,72.11,eia.gov
+2021-09-05 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,,,,,Data is not complete enough to be published.
+2021-09-06 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,46.20,75.02,92.68,78.67,eia.gov
+2021-09-07 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,,,,,Data is not complete enough to be published.
+2021-09-08 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,,,,,Data is not complete enough to be published.
+2021-09-09 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,,,,,Data is not complete enough to be published.
+2021-09-10 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,41.83,70.25,93.47,81.93,eia.gov
+2021-09-11 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,,,,,Data is not complete enough to be published.
+2021-09-12 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,57.52,87.58,90.99,73.69,eia.gov
+2021-09-13 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,51.99,81.70,91.61,82.54,eia.gov
+2021-09-14 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,36.76,64.77,94.36,87.79,eia.gov
+2021-09-15 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,62.61,93.39,90.15,81.81,eia.gov
+2021-09-16 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,69.15,100.85,88.65,78.00,eia.gov
+2021-09-17 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,73.43,105.14,88.56,77.86,eia.gov
+2021-09-18 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,,,,,Data is not complete enough to be published.
+2021-09-19 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,,,,,Data is not complete enough to be published.
+2021-09-20 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,67.64,99.58,89.02,76.91,eia.gov
+2021-09-21 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,93.13,127.50,84.83,70.39,eia.gov
+2021-09-22 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,,,,,Data is not complete enough to be published.
+2021-09-23 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,0.00,24.00,100.00,100.00,eia.gov
+2021-09-24 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,1.10,25.28,99.77,99.38,eia.gov
+2021-09-25 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,6.78,31.56,98.66,96.22,eia.gov
+2021-09-26 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,5.78,30.62,98.84,96.52,eia.gov
+2021-09-27 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,0.00,24.00,100.00,100.00,eia.gov
+2021-09-28 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,18.58,45.14,96.82,92.46,eia.gov
+2021-09-29 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,40.18,69.01,93.47,85.34,eia.gov
+2021-09-30 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,65.62,97.18,89.26,76.88,eia.gov
+2021-10-01 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,,,,,Data is not complete enough to be published.
+2021-10-02 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,47.51,77.15,92.25,81.29,eia.gov
+2021-10-03 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,34.74,62.87,94.32,86.07,eia.gov
+2021-10-04 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,,,,,Data is not complete enough to be published.
+2021-10-05 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,,,,,Data is not complete enough to be published.
+2021-10-06 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,,,,,Data is not complete enough to be published.
+2021-10-07 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,35.76,64.90,93.15,85.90,eia.gov
+2021-10-08 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,,,,,Data is not complete enough to be published.
+2021-10-09 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,,,,,Data is not complete enough to be published.
+2021-10-10 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,,,,,Data is not complete enough to be published.
+2021-10-11 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,,,,,Data is not complete enough to be published.
+2021-10-12 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,65.54,97.33,88.27,71.85,eia.gov
+2021-10-13 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,68.81,100.59,88.25,69.56,eia.gov
+2021-10-14 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,,,,,Data is not complete enough to be published.
+2021-10-15 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,19.18,45.36,96.80,90.63,eia.gov
+2021-10-16 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,24.61,51.93,95.41,87.72,eia.gov
+2021-10-17 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,25.15,52.68,94.83,82.32,eia.gov
+2021-10-18 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,41.21,71.70,91.37,76.03,eia.gov
+2021-10-19 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,32.84,61.97,93.37,83.90,eia.gov
+2021-10-20 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,60.03,92.51,88.57,72.80,eia.gov
+2021-10-21 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,,,,,Data is not complete enough to be published.
+2021-10-22 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,,,,,Data is not complete enough to be published.
+2021-10-23 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,,,,,Data is not complete enough to be published.
+2021-10-24 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,,,,,Data is not complete enough to be published.
+2021-10-25 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,,,,,Data is not complete enough to be published.
+2021-10-26 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,,,,,Data is not complete enough to be published.
+2021-10-27 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,,,,,Data is not complete enough to be published.
+2021-10-28 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,,,,,Data is not complete enough to be published.
+2021-10-29 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,57.74,89.08,89.61,76.94,eia.gov
+2021-10-30 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,69.35,102.55,87.33,69.49,eia.gov
+2021-10-31 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,54.89,86.08,89.88,73.92,eia.gov
+2021-11-01 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,25.91,53.02,95.37,89.16,eia.gov
+2021-11-02 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,24.63,51.60,95.80,90.41,eia.gov
+2021-11-03 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,36.75,65.28,93.56,85.49,eia.gov
+2021-11-04 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,14.11,40.04,97.47,93.97,eia.gov
+2021-11-05 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,11.40,36.87,97.94,95.77,eia.gov
+2021-11-06 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,2.64,26.93,99.55,98.98,eia.gov
+2021-11-07 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,0.00,24.00,100.00,100.00,eia.gov
+2021-11-08 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,26.87,54.18,95.31,87.32,eia.gov
+2021-11-09 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,40.06,68.76,92.83,81.71,eia.gov
+2021-11-10 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,,,,,Data is not complete enough to be published.
+2021-11-11 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,60.57,91.11,89.89,70.80,eia.gov
+2021-11-12 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,,,,,Data is not complete enough to be published.
+2021-11-13 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,61.12,91.63,89.66,69.50,eia.gov
+2021-11-14 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,89.33,122.92,85.06,63.47,eia.gov
+2021-11-15 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,54.62,84.50,90.90,78.08,eia.gov
+2021-11-16 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,46.13,75.14,92.11,81.98,eia.gov
+2021-11-17 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,55.28,84.83,91.02,77.36,eia.gov
+2021-11-18 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,,,,,Data is not complete enough to be published.
+2021-11-19 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,64.59,95.62,89.55,74.95,eia.gov
+2021-11-20 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,,,,,Data is not complete enough to be published.
+2021-11-21 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,178.04,222.22,70.52,37.99,eia.gov
+2021-11-22 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,,,,,Data is not complete enough to be published.
+2021-11-23 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,74.48,107.56,87.10,74.33,eia.gov
+2021-11-24 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,29.40,57.14,94.90,89.77,eia.gov
+2021-11-25 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,76.38,109.44,87.03,73.53,eia.gov
+2021-11-26 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,,,,,Data is not complete enough to be published.
+2021-11-27 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,76.98,110.67,86.43,71.18,eia.gov
+2021-11-28 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,,,,,Data is not complete enough to be published.
+2021-11-29 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,,,,,Data is not complete enough to be published.
+2021-11-30 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,61.41,93.34,89.06,78.45,eia.gov
+2021-12-01 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,66.32,98.95,88.03,74.20,eia.gov
+2021-12-02 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,,,,,Data is not complete enough to be published.
+2021-12-03 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,,,,,Data is not complete enough to be published.
+2021-12-04 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,75.12,108.53,86.56,67.18,eia.gov
+2021-12-05 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,,,,,Data is not complete enough to be published.
+2021-12-06 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,,,,,Data is not complete enough to be published.
+2021-12-07 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,43.05,72.77,92.10,82.08,eia.gov
+2021-12-08 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,53.76,84.37,90.62,79.33,eia.gov
+2021-12-09 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,,,,,Data is not complete enough to be published.
+2021-12-10 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,,,,,Data is not complete enough to be published.
+2021-12-11 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,,,,,Data is not complete enough to be published.
+2021-12-12 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,,,,,Data is not complete enough to be published.
+2021-12-13 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,,,,,Data is not complete enough to be published.
+2021-12-14 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,32.54,61.45,93.63,83.62,eia.gov
+2021-12-15 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,24.93,52.34,95.38,88.66,eia.gov
+2021-12-16 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,,,,,Data is not complete enough to be published.
+2021-12-17 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,,,,,Data is not complete enough to be published.
+2021-12-18 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,,,,,Data is not complete enough to be published.
+2021-12-19 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,,,,,Data is not complete enough to be published.
+2021-12-20 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,,,,,Data is not complete enough to be published.
+2021-12-21 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,,,,,Data is not complete enough to be published.
+2021-12-22 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,46.52,76.73,91.39,80.28,eia.gov
+2021-12-23 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,28.78,57.03,94.71,87.95,eia.gov
+2021-12-24 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,,,,,Data is not complete enough to be published.
+2021-12-25 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,,,,,Data is not complete enough to be published.
+2021-12-26 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,,,,,Data is not complete enough to be published.
+2021-12-27 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,,,,,Data is not complete enough to be published.
+2021-12-28 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,,,,,Data is not complete enough to be published.
+2021-12-29 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,,,,,Data is not complete enough to be published.
+2021-12-30 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,,,,,Data is not complete enough to be published.
+2021-12-31 00:00:00,USA,"Alcoa Power Generating, Inc. Yadkin Division",US-CAR-YAD,,,,,Data is not complete enough to be published.

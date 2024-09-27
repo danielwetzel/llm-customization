@@ -1,0 +1,366 @@
+Datetime (UTC),Country,Zone Name,Zone Id,Carbon Intensity gCO₂eq/kWh (direct),Carbon Intensity gCO₂eq/kWh (LCA),Low Carbon Percentage,Renewable Percentage,Data Source
+2022-01-01 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,296.23,324.44,64.46,57.97,spp.org; eia.gov
+2022-01-02 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,460.90,504.97,41.22,35.19,spp.org; eia.gov
+2022-01-03 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,505.88,549.61,37.42,31.19,spp.org; eia.gov
+2022-01-04 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,294.28,323.09,64.36,58.21,spp.org; eia.gov
+2022-01-05 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,366.11,401.57,54.38,48.14,spp.org; eia.gov
+2022-01-06 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,384.91,423.13,51.20,45.45,spp.org; eia.gov
+2022-01-07 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,496.90,541.25,38.02,32.45,spp.org; eia.gov
+2022-01-08 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,295.62,322.42,65.37,59.05,spp.org; eia.gov
+2022-01-09 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,347.46,377.40,58.97,52.43,spp.org; eia.gov
+2022-01-10 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,589.67,637.85,27.47,21.33,spp.org; eia.gov
+2022-01-11 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,344.19,375.90,58.36,51.96,spp.org; eia.gov
+2022-01-12 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,435.39,470.89,48.09,41.49,spp.org; eia.gov
+2022-01-13 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,486.79,526.52,41.20,34.44,spp.org; eia.gov
+2022-01-14 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,416.21,448.34,51.66,44.94,spp.org; eia.gov
+2022-01-15 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,326.26,357.79,60.03,53.49,spp.org; eia.gov
+2022-01-16 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,491.90,533.83,39.57,33.35,spp.org; eia.gov
+2022-01-17 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,518.93,562.12,36.52,29.96,spp.org; eia.gov
+2022-01-18 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,419.36,454.01,50.09,43.25,spp.org; eia.gov
+2022-01-19 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,330.17,361.41,59.84,53.42,spp.org; eia.gov
+2022-01-20 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,488.45,533.38,38.39,32.49,spp.org; eia.gov
+2022-01-21 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,454.50,497.86,42.19,36.56,spp.org; eia.gov
+2022-01-22 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,554.67,599.71,32.29,25.87,spp.org; eia.gov
+2022-01-23 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,461.46,499.82,44.23,37.45,spp.org; eia.gov
+2022-01-24 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,392.67,426.31,52.96,46.24,spp.org; eia.gov
+2022-01-25 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,458.66,496.38,44.89,38.52,spp.org; eia.gov
+2022-01-26 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,510.01,553.22,37.31,31.41,spp.org; eia.gov
+2022-01-27 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,456.94,494.46,45.15,38.89,spp.org; eia.gov
+2022-01-28 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,495.97,534.01,41.30,35.24,spp.org; eia.gov
+2022-01-29 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,438.93,474.52,47.79,41.18,spp.org; eia.gov
+2022-01-30 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,539.98,579.39,36.59,29.58,spp.org; eia.gov
+2022-01-31 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,477.90,512.41,44.83,38.11,spp.org; eia.gov
+2022-02-01 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,283.31,310.91,65.95,59.23,spp.org; eia.gov
+2022-02-02 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,318.46,349.11,61.15,55.21,spp.org; eia.gov
+2022-02-03 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,390.00,424.88,52.52,47.09,spp.org; eia.gov
+2022-02-04 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,509.24,550.76,38.40,32.71,spp.org; eia.gov
+2022-02-05 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,400.32,434.67,51.92,46.04,spp.org; eia.gov
+2022-02-06 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,337.68,365.63,60.85,54.66,spp.org; eia.gov
+2022-02-07 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,507.30,545.50,40.18,33.98,spp.org; eia.gov
+2022-02-08 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,330.54,359.46,61.03,54.59,spp.org; eia.gov
+2022-02-09 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,394.33,427.28,53.18,46.48,spp.org; eia.gov
+2022-02-10 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,496.41,535.22,40.89,34.20,spp.org; eia.gov
+2022-02-11 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,244.93,269.67,70.92,64.39,spp.org; eia.gov
+2022-02-12 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,409.39,446.98,49.27,44.46,spp.org; eia.gov
+2022-02-13 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,462.38,503.13,42.79,36.66,spp.org; eia.gov
+2022-02-14 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,446.55,485.28,45.36,39.14,spp.org; eia.gov
+2022-02-15 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,251.58,276.23,70.40,64.85,spp.org; eia.gov
+2022-02-16 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,231.43,255.81,72.34,66.78,spp.org; eia.gov
+2022-02-17 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,303.14,332.60,63.20,56.92,spp.org; eia.gov
+2022-02-18 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,441.24,480.31,45.73,39.72,spp.org; eia.gov
+2022-02-19 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,420.99,454.05,50.75,44.22,spp.org; eia.gov
+2022-02-20 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,247.42,273.35,70.11,63.12,spp.org; eia.gov
+2022-02-21 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,240.06,262.66,72.54,65.79,spp.org; eia.gov
+2022-02-22 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,283.09,306.37,68.36,62.35,spp.org; eia.gov
+2022-02-23 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,437.30,473.87,47.38,42.02,spp.org; eia.gov
+2022-02-24 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,628.51,681.59,21.43,15.94,spp.org; eia.gov
+2022-02-25 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,635.28,685.98,22.04,16.42,spp.org; eia.gov
+2022-02-26 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,617.04,663.09,26.22,20.23,spp.org; eia.gov
+2022-02-27 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,597.29,638.91,30.34,23.76,spp.org; eia.gov
+2022-02-28 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,503.21,536.12,43.45,36.91,spp.org; eia.gov
+2022-03-01 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,528.05,563.68,39.81,32.98,spp.org; eia.gov
+2022-03-02 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,565.15,600.86,36.45,29.44,spp.org; eia.gov
+2022-03-03 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,476.77,511.92,44.67,37.76,spp.org; eia.gov
+2022-03-04 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,238.86,262.52,72.12,66.19,spp.org; eia.gov
+2022-03-05 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,220.28,242.98,74.30,68.57,spp.org; eia.gov
+2022-03-06 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,297.24,321.62,66.50,60.30,spp.org; eia.gov
+2022-03-07 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,409.24,441.29,52.34,46.00,spp.org; eia.gov
+2022-03-08 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,581.40,627.96,29.19,22.86,spp.org; eia.gov
+2022-03-09 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,548.05,587.94,35.72,29.40,spp.org; eia.gov
+2022-03-10 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,408.68,435.84,55.01,49.00,spp.org; eia.gov
+2022-03-11 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,407.12,437.27,53.57,47.54,spp.org; eia.gov
+2022-03-12 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,498.24,536.82,40.85,34.82,spp.org; eia.gov
+2022-03-13 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,312.73,336.52,65.40,58.80,spp.org; eia.gov
+2022-03-14 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,268.42,289.51,70.86,64.14,spp.org; eia.gov
+2022-03-15 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,445.11,477.40,49.04,42.03,spp.org; eia.gov
+2022-03-16 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,297.76,325.45,64.69,57.72,spp.org; eia.gov
+2022-03-17 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,264.30,289.69,68.90,61.89,spp.org; eia.gov
+2022-03-18 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,251.01,277.74,69.36,62.61,spp.org; eia.gov
+2022-03-19 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,515.65,555.42,38.75,31.33,spp.org; eia.gov
+2022-03-20 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,253.91,278.55,70.26,62.92,spp.org; eia.gov
+2022-03-21 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,224.78,248.74,73.32,66.01,spp.org; eia.gov
+2022-03-22 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,224.45,250.10,72.44,65.55,spp.org; eia.gov
+2022-03-23 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,208.84,233.56,74.28,67.95,spp.org; eia.gov
+2022-03-24 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,427.27,463.86,48.43,42.80,spp.org; eia.gov
+2022-03-25 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,446.08,488.16,43.82,38.60,spp.org; eia.gov
+2022-03-26 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,484.91,522.95,42.60,35.17,spp.org; eia.gov
+2022-03-27 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,350.02,380.78,58.56,51.39,spp.org; eia.gov
+2022-03-28 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,332.03,361.96,60.53,53.80,spp.org; eia.gov
+2022-03-29 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,176.45,200.26,77.69,72.27,spp.org; eia.gov
+2022-03-30 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,188.43,212.57,76.47,70.34,spp.org; eia.gov
+2022-03-31 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,377.94,416.14,51.95,45.30,spp.org; eia.gov
+2022-04-01 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,374.52,407.92,54.89,48.25,spp.org; eia.gov
+2022-04-02 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,453.00,489.61,46.16,38.73,spp.org; eia.gov
+2022-04-03 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,275.23,300.89,67.89,61.55,spp.org; eia.gov
+2022-04-04 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,392.77,425.00,53.94,46.83,spp.org; eia.gov
+2022-04-05 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,279.95,306.39,67.09,60.15,spp.org; eia.gov
+2022-04-06 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,207.24,230.12,75.47,69.88,spp.org; eia.gov
+2022-04-07 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,203.88,227.35,75.47,70.23,spp.org; eia.gov
+2022-04-08 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,234.87,260.92,71.30,66.19,spp.org; eia.gov
+2022-04-09 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,330.01,364.70,58.17,51.43,spp.org; eia.gov
+2022-04-10 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,242.54,271.92,68.84,61.53,spp.org; eia.gov
+2022-04-11 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,352.04,389.26,54.85,47.86,spp.org; eia.gov
+2022-04-12 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,210.36,237.38,72.96,66.51,spp.org; eia.gov
+2022-04-13 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,222.68,250.08,71.64,64.89,spp.org; eia.gov
+2022-04-14 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,362.67,401.45,53.03,46.07,spp.org; eia.gov
+2022-04-15 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,253.73,279.58,69.74,62.91,spp.org; eia.gov
+2022-04-16 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,252.60,277.41,70.38,63.32,spp.org; eia.gov
+2022-04-17 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,442.34,477.59,47.82,40.25,spp.org; eia.gov
+2022-04-18 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,399.64,433.33,52.49,45.27,spp.org; eia.gov
+2022-04-19 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,268.26,293.48,68.77,62.08,spp.org; eia.gov
+2022-04-20 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,248.95,275.39,69.88,62.97,spp.org; eia.gov
+2022-04-21 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,324.37,354.21,61.34,54.57,spp.org; eia.gov
+2022-04-22 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,214.57,238.99,73.97,67.37,spp.org; eia.gov
+2022-04-23 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,199.05,225.04,74.53,67.62,spp.org; eia.gov
+2022-04-24 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,240.46,270.52,68.69,60.91,spp.org; eia.gov
+2022-04-25 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,287.06,319.83,63.04,55.58,spp.org; eia.gov
+2022-04-26 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,409.07,449.68,47.96,40.72,spp.org; eia.gov
+2022-04-27 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,214.28,241.37,72.56,66.30,spp.org; eia.gov
+2022-04-28 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,267.13,294.49,67.75,61.48,spp.org; eia.gov
+2022-04-29 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,197.31,222.70,75.03,68.31,spp.org; eia.gov
+2022-04-30 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,230.72,260.35,69.71,64.67,spp.org; eia.gov
+2022-05-01 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,341.35,378.32,55.93,49.92,spp.org; eia.gov
+2022-05-02 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,280.87,310.24,65.43,58.85,spp.org; eia.gov
+2022-05-03 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,358.36,400.43,51.70,44.72,spp.org; eia.gov
+2022-05-04 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,440.23,485.44,42.60,35.58,spp.org; eia.gov
+2022-05-05 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,425.76,464.21,47.53,40.37,spp.org; eia.gov
+2022-05-06 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,518.54,567.76,33.45,26.14,spp.org; eia.gov
+2022-05-07 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,291.26,323.48,62.90,55.81,spp.org; eia.gov
+2022-05-08 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,318.14,353.46,58.81,51.85,spp.org; eia.gov
+2022-05-09 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,288.75,324.80,61.03,55.15,spp.org; eia.gov
+2022-05-10 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,354.48,394.67,52.89,47.33,spp.org; eia.gov
+2022-05-11 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,344.74,382.18,55.24,49.74,spp.org; eia.gov
+2022-05-12 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,293.76,329.34,60.77,55.41,spp.org; eia.gov
+2022-05-13 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,407.14,454.28,44.41,38.62,spp.org; eia.gov
+2022-05-14 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,518.83,574.91,29.66,23.58,spp.org; eia.gov
+2022-05-15 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,438.50,481.10,44.11,37.83,spp.org; eia.gov
+2022-05-16 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,529.50,579.26,32.13,25.83,spp.org; eia.gov
+2022-05-17 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,342.48,375.99,57.52,51.54,spp.org; eia.gov
+2022-05-18 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,454.38,503.37,39.27,33.38,spp.org; eia.gov
+2022-05-19 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,420.89,467.35,43.54,37.85,spp.org; eia.gov
+2022-05-20 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,314.10,352.55,57.42,51.68,spp.org; eia.gov
+2022-05-21 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,265.18,294.49,66.80,60.42,spp.org; eia.gov
+2022-05-22 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,457.17,492.08,46.62,38.92,spp.org; eia.gov
+2022-05-23 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,470.28,501.86,47.26,40.20,spp.org; eia.gov
+2022-05-24 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,480.99,511.78,46.71,39.50,spp.org; eia.gov
+2022-05-25 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,340.66,365.87,62.31,54.95,spp.org; eia.gov
+2022-05-26 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,352.14,380.70,59.52,52.33,spp.org; eia.gov
+2022-05-27 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,508.90,545.59,41.06,34.24,spp.org; eia.gov
+2022-05-28 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,287.11,314.34,65.91,59.45,spp.org; eia.gov
+2022-05-29 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,280.31,308.47,66.02,59.81,spp.org; eia.gov
+2022-05-30 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,296.53,325.29,64.24,58.16,spp.org; eia.gov
+2022-05-31 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,376.85,411.97,53.65,47.75,spp.org; eia.gov
+2022-06-01 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,428.95,466.25,47.81,41.73,spp.org; eia.gov
+2022-06-02 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,580.82,629.48,28.16,21.46,spp.org; eia.gov
+2022-06-03 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,585.42,632.01,28.85,22.26,spp.org; eia.gov
+2022-06-04 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,488.47,521.21,44.95,38.56,spp.org; eia.gov
+2022-06-05 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,441.04,472.01,50.14,43.71,spp.org; eia.gov
+2022-06-06 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,580.88,625.52,30.27,24.27,spp.org; eia.gov
+2022-06-07 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,576.52,624.76,28.80,23.01,spp.org; eia.gov
+2022-06-08 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,521.19,561.60,37.88,31.91,spp.org; eia.gov
+2022-06-09 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,595.82,639.53,29.41,23.41,spp.org; eia.gov
+2022-06-10 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,544.29,589.14,33.40,27.60,spp.org; eia.gov
+2022-06-11 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,545.05,589.30,33.61,28.03,spp.org; eia.gov
+2022-06-12 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,465.37,503.83,43.84,38.63,spp.org; eia.gov
+2022-06-13 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,398.23,436.32,50.05,45.27,spp.org; eia.gov
+2022-06-14 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,366.92,403.84,53.56,48.61,spp.org; eia.gov
+2022-06-15 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,393.28,430.79,50.80,45.83,spp.org; eia.gov
+2022-06-16 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,458.99,502.52,41.67,36.89,spp.org; eia.gov
+2022-06-17 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,481.42,527.91,38.17,33.39,spp.org; eia.gov
+2022-06-18 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,451.40,496.01,41.78,37.05,spp.org; eia.gov
+2022-06-19 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,388.07,425.43,51.35,46.31,spp.org; eia.gov
+2022-06-20 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,392.02,428.83,51.27,46.39,spp.org; eia.gov
+2022-06-21 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,467.16,511.91,40.37,35.57,spp.org; eia.gov
+2022-06-22 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,591.99,645.89,24.24,19.33,spp.org; eia.gov
+2022-06-23 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,491.29,535.30,38.58,33.70,spp.org; eia.gov
+2022-06-24 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,404.41,444.54,48.52,43.64,spp.org; eia.gov
+2022-06-25 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,408.40,450.63,46.94,42.23,spp.org; eia.gov
+2022-06-26 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,380.44,418.64,51.69,46.05,spp.org; eia.gov
+2022-06-27 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,607.67,654.29,26.83,21.02,spp.org; eia.gov
+2022-06-28 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,600.68,650.95,25.54,19.81,spp.org; eia.gov
+2022-06-29 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,481.60,525.02,39.81,34.61,spp.org; eia.gov
+2022-06-30 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,405.28,446.21,47.96,42.85,spp.org; eia.gov; Electricity Maps Estimation
+2022-07-01 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,495.24,542.45,36.50,31.57,spp.org; eia.gov
+2022-07-02 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,552.27,602.12,29.97,24.68,spp.org; eia.gov
+2022-07-03 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,526.38,571.44,34.91,29.57,spp.org; eia.gov
+2022-07-04 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,406.28,445.79,48.61,43.59,spp.org; eia.gov
+2022-07-05 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,426.77,469.64,44.94,40.31,spp.org; eia.gov
+2022-07-06 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,478.43,527.32,37.13,32.49,spp.org; eia.gov
+2022-07-07 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,550.85,606.10,27.41,22.76,spp.org; eia.gov
+2022-07-08 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,570.46,626.44,25.07,20.45,spp.org; eia.gov
+2022-07-09 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,598.72,655.45,22.05,17.19,spp.org; eia.gov
+2022-07-10 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,528.16,577.47,32.39,27.43,spp.org; eia.gov
+2022-07-11 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,500.45,550.51,34.45,29.84,spp.org; eia.gov
+2022-07-12 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,543.67,595.57,29.74,24.99,spp.org; eia.gov
+2022-07-13 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,598.09,653.19,23.11,18.46,eia.gov
+2022-07-14 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,494.74,543.30,35.79,31.28,eia.gov
+2022-07-15 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,497.00,546.93,35.18,30.76,eia.gov
+2022-07-16 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,511.01,558.64,34.85,30.32,eia.gov
+2022-07-17 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,573.98,627.73,26.14,21.41,eia.gov
+2022-07-18 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,593.48,650.79,22.81,18.44,eia.gov
+2022-07-19 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,503.15,555.57,33.63,31.84,eia.gov
+2022-07-20 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,564.91,619.52,26.84,25.10,eia.gov
+2022-07-21 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,613.86,672.17,20.26,18.49,eia.gov
+2022-07-22 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,537.17,585.46,32.29,30.49,eia.gov
+2022-07-23 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,435.05,473.87,46.31,42.55,eia.gov
+2022-07-24 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,488.23,535.10,37.71,33.13,eia.gov
+2022-07-25 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,513.81,564.15,33.38,28.75,eia.gov
+2022-07-26 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,524.81,574.24,32.83,28.20,eia.gov
+2022-07-27 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,566.49,621.88,26.11,21.57,eia.gov
+2022-07-28 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,574.37,628.87,25.90,21.19,eia.gov
+2022-07-29 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,577.80,633.80,24.33,19.36,eia.gov
+2022-07-30 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,567.86,621.95,26.21,20.79,eia.gov
+2022-07-31 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,522.56,572.65,32.50,27.22,eia.gov
+2022-08-01 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,502.33,549.36,36.15,31.46,eia.gov
+2022-08-02 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,435.03,477.15,44.74,40.39,eia.gov
+2022-08-03 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,457.19,502.21,41.22,36.96,eia.gov
+2022-08-04 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,517.67,568.85,32.61,28.27,eia.gov
+2022-08-05 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,521.03,570.93,32.83,28.56,eia.gov
+2022-08-06 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,446.69,487.60,44.21,39.99,eia.gov
+2022-08-07 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,477.52,521.48,39.79,35.40,eia.gov
+2022-08-08 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,557.23,608.72,28.79,24.45,eia.gov
+2022-08-09 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,616.18,672.59,20.87,16.32,eia.gov
+2022-08-10 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,629.12,688.28,18.27,13.71,eia.gov
+2022-08-11 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,602.24,658.32,22.36,17.87,eia.gov
+2022-08-12 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,563.64,616.07,27.89,23.26,eia.gov
+2022-08-13 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,526.50,577.78,31.69,26.89,eia.gov
+2022-08-14 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,557.02,607.05,29.63,24.82,eia.gov
+2022-08-15 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,523.79,572.09,33.35,28.89,eia.gov
+2022-08-16 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,529.33,577.99,32.59,28.01,eia.gov
+2022-08-17 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,592.99,644.04,25.68,20.73,eia.gov
+2022-08-18 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,637.43,692.64,19.52,14.32,eia.gov
+2022-08-19 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,558.01,606.25,30.31,25.29,eia.gov
+2022-08-20 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,583.94,631.97,28.09,22.82,eia.gov
+2022-08-21 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,637.86,687.95,22.18,16.69,eia.gov
+2022-08-22 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,635.78,688.50,20.99,15.71,eia.gov
+2022-08-23 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,628.26,681.89,21.19,16.20,eia.gov
+2022-08-24 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,645.91,702.38,18.22,13.15,eia.gov
+2022-08-25 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,641.60,699.48,17.86,12.92,eia.gov
+2022-08-26 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,569.77,619.83,28.23,23.56,eia.gov
+2022-08-27 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,418.66,458.34,47.33,42.54,eia.gov
+2022-08-28 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,424.26,462.96,47.41,42.31,eia.gov
+2022-08-29 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,482.22,527.30,39.06,34.25,eia.gov
+2022-08-30 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,628.92,686.48,19.20,14.22,eia.gov
+2022-08-31 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,608.46,665.77,21.25,16.42,eia.gov
+2022-09-01 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,594.97,650.81,23.17,18.29,eia.gov
+2022-09-02 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,549.38,602.39,28.66,23.66,eia.gov
+2022-09-03 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,577.05,628.37,26.99,21.60,eia.gov
+2022-09-04 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,584.63,634.33,27.18,21.49,eia.gov
+2022-09-05 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,572.69,622.50,28.20,22.49,eia.gov
+2022-09-06 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,554.37,611.68,26.17,21.03,eia.gov
+2022-09-07 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,563.85,619.90,25.86,21.05,eia.gov
+2022-09-08 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,497.28,545.34,36.22,31.18,eia.gov
+2022-09-09 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,461.37,506.55,40.72,35.53,eia.gov
+2022-09-10 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,456.73,498.20,43.09,37.47,eia.gov
+2022-09-11 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,499.34,542.37,38.36,32.20,eia.gov
+2022-09-12 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,559.29,610.47,28.70,22.81,eia.gov
+2022-09-13 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,449.03,493.67,42.06,36.73,eia.gov
+2022-09-14 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,357.29,392.07,55.48,50.39,eia.gov
+2022-09-15 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,325.50,358.36,59.39,54.13,eia.gov
+2022-09-16 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,406.40,444.74,49.21,43.84,eia.gov
+2022-09-17 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,346.79,386.59,53.87,48.61,eia.gov
+2022-09-18 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,377.54,421.73,48.71,43.75,eia.gov
+2022-09-19 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,395.31,442.77,45.72,41.07,eia.gov
+2022-09-20 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,383.27,428.80,47.64,43.01,eia.gov
+2022-09-21 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,385.43,432.62,46.42,41.61,eia.gov
+2022-09-22 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,438.65,486.21,41.34,35.73,eia.gov
+2022-09-23 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,482.72,526.80,39.36,33.28,eia.gov
+2022-09-24 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,474.11,521.54,38.26,32.38,eia.gov
+2022-09-25 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,379.91,425.06,47.89,41.90,eia.gov
+2022-09-26 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,526.95,582.62,29.13,22.90,eia.gov
+2022-09-27 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,456.50,503.44,40.19,34.27,eia.gov
+2022-09-28 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,413.44,457.37,45.62,39.86,eia.gov
+2022-09-29 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,310.26,345.19,59.66,53.73,eia.gov
+2022-09-30 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,275.87,307.16,64.69,58.87,eia.gov
+2022-10-01 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,364.05,404.37,52.03,46.73,eia.gov; Electricity Maps Estimation
+2022-10-02 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,413.71,461.34,43.60,39.10,eia.gov; Electricity Maps Estimation
+2022-10-03 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,396.93,440.78,47.24,43.02,eia.gov; Electricity Maps Estimation
+2022-10-04 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,439.43,489.53,40.13,35.74,eia.gov
+2022-10-05 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,542.41,601.60,25.85,21.60,eia.gov
+2022-10-06 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,578.57,642.27,20.21,19.18,eia.gov
+2022-10-07 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,484.85,534.00,36.32,36.16,eia.gov
+2022-10-08 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,556.49,613.37,25.74,25.38,eia.gov
+2022-10-09 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,548.85,604.63,26.95,26.78,eia.gov
+2022-10-10 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,519.85,572.32,31.38,31.36,eia.gov
+2022-10-11 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,275.34,307.01,64.58,64.00,eia.gov
+2022-10-12 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,328.29,368.75,55.14,54.49,eia.gov
+2022-10-13 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,329.63,371.28,54.35,53.83,eia.gov
+2022-10-14 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,363.73,400.50,53.84,53.67,eia.gov
+2022-10-15 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,447.06,491.51,42.41,42.19,eia.gov
+2022-10-16 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,394.32,428.63,52.39,52.25,eia.gov
+2022-10-17 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,434.60,475.46,45.62,45.18,eia.gov
+2022-10-18 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,584.30,635.24,26.49,26.15,eia.gov
+2022-10-19 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,614.35,667.36,22.64,22.38,eia.gov
+2022-10-20 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,521.81,565.80,35.77,35.61,eia.gov
+2022-10-21 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,392.45,425.88,53.05,52.96,eia.gov
+2022-10-22 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,313.79,342.29,62.75,62.46,eia.gov
+2022-10-23 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,235.77,262.32,70.76,70.50,eia.gov
+2022-10-24 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,296.45,328.60,62.37,62.13,eia.gov
+2022-10-25 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,411.97,452.80,47.43,47.34,eia.gov
+2022-10-26 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,509.38,560.98,33.07,32.89,eia.gov
+2022-10-27 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,274.23,305.87,64.61,64.55,eia.gov
+2022-10-28 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,480.47,522.47,40.64,40.51,eia.gov
+2022-10-29 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,558.93,607.30,30.20,29.61,eia.gov
+2022-10-30 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,639.03,692.02,20.49,20.02,eia.gov
+2022-10-31 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,640.39,697.17,18.26,18.17,eia.gov
+2022-11-01 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,358.48,394.19,54.86,54.73,eia.gov
+2022-11-02 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,181.74,211.23,74.05,73.91,eia.gov
+2022-11-03 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,158.47,188.23,75.94,75.93,eia.gov
+2022-11-04 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,206.46,240.04,69.57,69.52,eia.gov
+2022-11-05 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,312.83,351.79,57.23,57.12,eia.gov
+2022-11-06 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,259.34,299.53,61.32,60.91,eia.gov; Electricity Maps Estimation
+2022-11-07 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,319.52,365.16,53.01,52.85,eia.gov
+2022-11-08 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,226.49,263.13,66.21,65.76,eia.gov
+2022-11-09 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,214.53,248.33,68.87,68.18,eia.gov
+2022-11-10 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,234.78,269.31,66.63,66.06,eia.gov
+2022-11-11 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,240.22,274.56,66.23,65.64,eia.gov
+2022-11-12 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,540.26,598.09,26.78,25.90,eia.gov
+2022-11-13 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,384.74,425.49,49.71,49.64,eia.gov
+2022-11-14 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,419.56,467.32,42.99,42.95,eia.gov
+2022-11-15 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,574.08,641.57,18.52,18.07,eia.gov; Electricity Maps Estimation
+2022-11-16 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,493.67,550.85,31.26,29.96,spp.org; Electricity Maps Estimation
+2022-11-17 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,433.39,483.71,40.32,38.05,spp.org
+2022-11-18 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,371.89,415.54,49.36,47.31,spp.org
+2022-11-19 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,413.70,462.14,43.07,40.42,spp.org
+2022-11-20 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,437.74,484.16,42.02,39.32,spp.org
+2022-11-21 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,452.28,499.39,40.32,37.10,spp.org
+2022-11-22 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,439.49,479.42,45.37,40.56,spp.org
+2022-11-23 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,363.30,395.76,56.21,49.83,spp.org
+2022-11-24 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,303.84,332.71,63.47,56.37,spp.org
+2022-11-25 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,335.37,370.47,57.34,49.84,spp.org
+2022-11-26 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,429.58,474.51,43.69,35.96,spp.org
+2022-11-27 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,364.17,398.91,54.93,47.61,spp.org
+2022-11-28 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,329.87,365.70,57.36,50.77,spp.org
+2022-11-29 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,237.69,268.02,68.56,61.88,spp.org
+2022-11-30 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,390.88,437.54,46.19,39.43,spp.org
+2022-12-01 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,281.77,318.80,61.05,54.94,spp.org; Electricity Maps Estimation
+2022-12-02 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,216.86,246.82,70.69,64.08,spp.org
+2022-12-03 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,384.91,423.97,50.74,43.81,spp.org
+2022-12-04 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,459.99,506.84,39.86,32.64,spp.org
+2022-12-05 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,398.93,438.78,49.05,42.12,spp.org
+2022-12-06 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,502.27,550.17,35.36,28.69,spp.org
+2022-12-07 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,589.32,651.20,20.06,13.27,spp.org
+2022-12-08 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,510.61,558.82,34.49,27.82,spp.org
+2022-12-09 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,526.93,578.62,31.24,24.50,spp.org
+2022-12-10 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,513.36,559.08,35.54,28.66,spp.org
+2022-12-11 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,478.04,524.15,38.52,31.73,spp.org
+2022-12-12 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,247.04,278.81,66.95,60.48,spp.org
+2022-12-13 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,231.39,262.81,68.65,61.93,spp.org
+2022-12-14 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,301.35,336.62,60.21,53.91,spp.org
+2022-12-15 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,293.60,327.18,61.79,56.61,spp.org
+2022-12-16 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,305.24,339.59,60.35,56.70,spp.org
+2022-12-17 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,397.25,436.68,49.40,45.52,spp.org
+2022-12-18 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,519.68,568.08,33.74,29.77,spp.org
+2022-12-19 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,406.53,443.33,49.97,46.41,spp.org
+2022-12-20 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,516.21,563.69,34.40,29.47,spp.org
+2022-12-21 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,562.43,609.54,30.64,25.07,spp.org
+2022-12-22 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,406.30,443.79,49.64,44.26,spp.org
+2022-12-23 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,442.50,492.09,40.82,35.79,spp.org
+2022-12-24 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,558.29,617.24,25.67,20.19,spp.org
+2022-12-25 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,535.20,588.65,30.08,24.27,spp.org
+2022-12-26 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,389.38,425.92,51.66,45.77,spp.org
+2022-12-27 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,388.86,423.87,52.53,46.79,spp.org
+2022-12-28 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,279.56,307.80,65.96,59.63,spp.org
+2022-12-29 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,255.32,284.28,67.74,61.03,spp.org
+2022-12-30 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,485.85,537.84,34.69,27.77,spp.org
+2022-12-31 00:00:00,USA,Southwest Power Pool,US-CENT-SWPP,322.23,358.26,57.92,51.05,spp.org
