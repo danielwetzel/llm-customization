@@ -57,7 +57,7 @@ def framework_page(output_comp_df, input_comp_df, param_comp_df):
         param_target = param_comp_df[['total_energy_7500_prompts_Wh']]
 
         # Define the regression models
-        input_model = fit_regression(X=input_feature, y=input_target, regression_type='polynomial', polynomial_degree=2)
+        input_model = fit_regression(X=input_feature, y=input_target, regression_type='linear', polynomial_degree=2)
         output_model = fit_regression(X=output_feature, y=output_target, regression_type='polynomial', polynomial_degree=2)
         param_model = fit_regression(X=param_feature, y=param_target, regression_type='exponential')
 
@@ -68,7 +68,7 @@ def framework_page(output_comp_df, input_comp_df, param_comp_df):
         # Predict values for altair graphical regression
         input_pred_df = predict_values(model=input_model, 
                                         pred_value_dict=input_predict_values, 
-                                        type='polynomial', 
+                                        type='linear', 
                                         target='total_energy_100k_output_tokens_Wh')
 
         output_pred_df = predict_values(model=output_model, 
@@ -179,14 +179,14 @@ def framework_page(output_comp_df, input_comp_df, param_comp_df):
         
         start_pred_df = predict_values(model=input_model, 
                                 pred_value_dict={'avg_in_tok': [input_tok_start]}, 
-                                type='polynomial', 
+                                type='linear', 
                                 target='total_energy_100k_output_tokens_Wh')
         
         start_pred_df = pd.concat([start_pred_df, pd.DataFrame({'Type': ['Start']})], axis=1, copy=False)
         
         end_pred_df = predict_values(model=input_model, 
                                 pred_value_dict={'avg_in_tok': [input_tok_end]}, 
-                                type='polynomial', 
+                                type='linear', 
                                 target='total_energy_100k_output_tokens_Wh')
         
         end_pred_df = pd.concat([end_pred_df, pd.DataFrame({'Type': ['End']})], axis=1, copy=False)
@@ -225,7 +225,7 @@ def framework_page(output_comp_df, input_comp_df, param_comp_df):
                 tooltip=['avg_in_tok', 'Type']
             )
 
-            input_regression = input_predicted.transform_regression('avg_in_tok', 'total_energy_100k_output_tokens_Wh', method="quad").mark_line()
+            input_regression = input_predicted.transform_regression('avg_in_tok', 'total_energy_100k_output_tokens_Wh', method="linear").mark_line()
 
             # Combine charts
             input_chart = input_highlight + input_base + input_predicted + input_regression
