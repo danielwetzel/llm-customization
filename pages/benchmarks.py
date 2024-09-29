@@ -190,6 +190,8 @@ def quant_page(df):
         quant_order = ['bf16', 'fp8', 'int4']
         df_transformed['quantization'] = pd.Categorical(df_transformed['quantization'], categories=quant_order, ordered=True)
 
+        df_transformed['energy_consumed_wh'] = df_transformed['energy_consumed'] * 1000
+
         # Display the filtered DataFrame
         st.write("")
         st.write("")
@@ -210,7 +212,7 @@ def quant_page(df):
                 alt.Tooltip('quantization:N', title='Quantization'),
                 alt.Tooltip('guided:N', title='Guided - Knowledge Embedding'),
                 alt.Tooltip('gpu_count:Q', title='GPU Count'),
-                alt.Tooltip('energy_consumed:Q', title='Energy Consumed (kWh)', format='.2f'),
+                alt.Tooltip('energy_consumed_wh:Q', title='Energy Consumed (Wh)', format='.2f'),
                 alt.Tooltip('duration_minutes:Q', title='Time to complete 500 Questions (minutes)', format='.2f')
             ]
         ).properties(
@@ -237,7 +239,7 @@ def quant_page(df):
                 alt.Tooltip('quantization:N', title='Quantization'),
                 alt.Tooltip('guided:N', title='Guided - Knowledge Embedding'),
                 alt.Tooltip('gpu_count:Q', title='GPU Count'),
-                alt.Tooltip('energy_consumed:Q', title='Energy Consumed (kWh)', format='.2f'),
+                alt.Tooltip('energy_consumed_wh:Q', title='Energy Consumed (Wh)', format='.2f'),
                 alt.Tooltip('duration_minutes:Q', title='Time to complete 500 Questions (minutes)', format='.2f')
             ]
         ).properties(
@@ -245,13 +247,13 @@ def quant_page(df):
         )
 
         # Energy consumption as bar charts on the left y-axis with adjusted width
-        energy_bars = alt.Chart(df_transformed).mark_bar(color=energy_color, opacity=0.6, size=20).encode(
+        energy_bars = alt.Chart(df_transformed).mark_bar(color=energy_color, opacity=0.6, size=40).encode(
             x=alt.X('quantization:N', title='Quantization', sort=quant_order),
-            y=alt.Y('energy_consumed:Q', title='Energy Consumed (kWh)', axis=alt.Axis(titleColor=energy_color)),
+            y=alt.Y('energy_consumed_wh:Q', title='Energy Consumed (Wh)', axis=alt.Axis(titleColor=energy_color)),
             tooltip=[
                 alt.Tooltip('quantization:N', title='Quantization'),
                 alt.Tooltip('gpu_count:Q', title='GPU Count'),
-                alt.Tooltip('energy_consumed:Q', title='Energy Consumed (kWh)', format='.2f'), 
+                alt.Tooltip('energy_consumed_wh:Q', title='Energy Consumed (Wh)', format='.2f'), 
                 alt.Tooltip('duration_minutes:Q', title='Time to complete 500 Questions (minutes)', format='.2f')
             ]
         )
@@ -296,19 +298,19 @@ def guided_page(df):
         # Filter the data based on the selected model
         if model == 'Mistral-NeMo':
             df_transformed = df[df.model_name == 'mistral_nemo']
-            scale = [0, 0.2]
+            scale = [0, 300]
         elif model == 'LLaMA-3-8B-Instruct':
             df_transformed = df[df.model_name == 'llama3_8b']
-            scale = [0, 0.2]
+            scale = [0, 300]
         elif model == 'LLaMA-3-70B-Instruct':
             df_transformed = df[df.model_name == 'llama3_70b']
-            scale = [0, 2]
+            scale = [0, 1500]
         elif model == 'LLaMA-3.1-8B-Instruct':
             df_transformed = df[df.model_name == 'llama3_1_8b']
-            scale = [0, 0.2]
+            scale = [0, 300]
         else:
             df_transformed = df[df.model_name == 'llama3_1_70b']
-            scale = [0, 2]
+            scale = [0, 1500]
         
 
         df_transformed['guided'] = df_transformed['guided'].map({1: 'True', 0: 'False'})
@@ -322,6 +324,8 @@ def guided_page(df):
 
         
         df_transformed = df_transformed[df_transformed.quantization == quant]
+
+        df_transformed['energy_consumed_wh'] = df_transformed['energy_consumed'] * 1000
         
 
         # Display the filtered DataFrame
@@ -344,7 +348,7 @@ def guided_page(df):
                 alt.Tooltip('quantization:N', title='Quantization'),
                 alt.Tooltip('guided:N', title='Guided - Knowledge Embedding'),
                 alt.Tooltip('gpu_count:Q', title='GPU Count'),
-                alt.Tooltip('energy_consumed:Q', title='Energy Consumed (kWh)', format='.2f'),
+                alt.Tooltip('energy_consumed_wh:Q', title='Energy Consumed (Wh)', format='.2f'),
                 alt.Tooltip('duration_minutes:Q', title='Time to complete 500 Questions (minutes)', format='.2f')
             ]
         ).properties(
@@ -371,7 +375,7 @@ def guided_page(df):
                 alt.Tooltip('quantization:N', title='Quantization'),
                 alt.Tooltip('guided:N', title='Guided - Knowledge Embedding'),
                 alt.Tooltip('gpu_count:Q', title='GPU Count'),
-                alt.Tooltip('energy_consumed:Q', title='Energy Consumed (kWh)', format='.2f'),
+                alt.Tooltip('energy_consumed_wh:Q', title='Energy Consumed (Wh)', format='.2f'),
                 alt.Tooltip('duration_minutes:Q', title='Time to complete 500 Questions (minutes)', format='.2f')
             ]
         ).properties(
@@ -381,11 +385,11 @@ def guided_page(df):
         # Energy consumption as bar charts on the left y-axis with adjusted width
         energy_bars = alt.Chart(df_transformed).mark_bar(color=energy_color, opacity=0.6, size=20).encode(
             x=alt.X('guided:N', title='Guided - Knowledge Embedding'),
-            y=alt.Y('energy_consumed:Q', title='Energy Consumed (kWh)', scale=alt.Scale(domain=scale), axis=alt.Axis(titleColor=energy_color, orient='left')),
+            y=alt.Y('energy_consumed_wh:Q', title='Energy Consumed (Wh)', scale=alt.Scale(domain=scale), axis=alt.Axis(titleColor=energy_color, orient='left')),
             tooltip=[
                 alt.Tooltip('quantization:N', title='Quantization'),
                 alt.Tooltip('gpu_count:Q', title='GPU Count'),
-                alt.Tooltip('energy_consumed:Q', title='Energy Consumed (kWh)', format='.2f'), 
+                alt.Tooltip('energy_consumed_wh:Q', title='Energy Consumed (Wh)', format='.2f'), 
                 alt.Tooltip('duration_minutes:Q', title='Time to complete 500 Questions (minutes)', format='.2f')
             ]
         )
@@ -393,11 +397,11 @@ def guided_page(df):
         # Energy consumption as bar charts on the left y-axis with adjusted width
         energy_lines = alt.Chart(df_transformed).mark_line(color=energy_color, opacity=0.7, strokeDash=[4, 4], thickness=1).encode(
             x=alt.X('guided:N', title='Guided - Knowledge Embedding'),
-            y=alt.Y('energy_consumed:Q', title='Energy Consumed (kWh)', scale=alt.Scale(domain=scale), axis=alt.Axis(titleColor=energy_color, orient='left')),
+            y=alt.Y('energy_consumed_wh:Q', title='Energy Consumed (Wh)', scale=alt.Scale(domain=scale), axis=alt.Axis(titleColor=energy_color, orient='left')),
             tooltip=[
                 alt.Tooltip('quantization:N', title='Quantization'),
                 alt.Tooltip('gpu_count:Q', title='GPU Count'),
-                alt.Tooltip('energy_consumed:Q', title='Energy Consumed (kWh)', format='.2f'), 
+                alt.Tooltip('energy_consumed_wh:Q', title='Energy Consumed (Wh)', format='.2f'), 
                 alt.Tooltip('duration_minutes:Q', title='Time to complete 500 Questions (minutes)', format='.2f')
             ]
         )
@@ -474,12 +478,15 @@ def model_comp_page(df):
         quant_order = ['bf16', 'fp8', 'int4']
         df_combined['quantization'] = pd.Categorical(df_combined['quantization'], categories=quant_order, ordered=True)
 
+        
+        df_combined['energy_consumed_wh'] = df_combined['energy_consumed'] * 1000
+
         # Initialize an empty container for the final chart
         final_chart = alt.hconcat()
 
         model_order = ['llama3_1_70b', 'mistral_nemo', 'llama3_1_8b']
 
-        for model_name in model_order:
+        for model_name in selected_models:
             model_df = df_combined[df_combined['model_name'] == model_name]
 
             # Create the Altair chart for Arena Score with Confidence Intervals
@@ -495,7 +502,7 @@ def model_comp_page(df):
                     alt.Tooltip('quantization:N', title='Quantization'),
                     alt.Tooltip('guided:N', title='Guided - Knowledge Embedding'),
                     alt.Tooltip('gpu_count:Q', title='GPU Count'),
-                    alt.Tooltip('energy_consumed:Q', title='Energy Consumed (kWh)', format='.2f'),
+                    alt.Tooltip('energy_consumed_wh:Q', title='Energy Consumed (Wh)', format='.2f'),
                     alt.Tooltip('duration_minutes:Q', title='Time to complete 500 Questions (minutes)', format='.2f')
                 ]
             ).properties(
@@ -514,12 +521,12 @@ def model_comp_page(df):
             energy_bars = alt.Chart(model_df).mark_bar(opacity=0.6, size=20).encode(
                 x=alt.X('quantization:N', title='Quantization'),
                 xOffset=alt.XOffset("guided:N", sort=['False', 'True']),  # Explicitly set the order
-                y=alt.Y('energy_consumed:Q', title='Energy Consumed (kWh)', scale=alt.Scale(domain=[0, 0.9]), axis=alt.Axis(orient='left')),
+                y=alt.Y('energy_consumed_wh:Q', title='Energy Consumed (Wh)', scale=alt.Scale(domain=[0, 900]), axis=alt.Axis(orient='left')),
                 color=alt.Color('guided:N', title='Guided', sort=['False', 'True'], scale=alt.Scale(domain=['False', 'True'], scheme='category10')),  # Same colors as above
                 tooltip=[
                     alt.Tooltip('quantization:N', title='Quantization'),
                     alt.Tooltip('gpu_count:Q', title='GPU Count'),
-                    alt.Tooltip('energy_consumed:Q', title='Energy Consumed (kWh)', format='.2f'), 
+                    alt.Tooltip('energy_consumed_wh:Q', title='Energy Consumed (Wh)', format='.2f'), 
                     alt.Tooltip('duration_minutes:Q', title='Time to complete 500 Questions (minutes)', format='.2f')
                 ]
             )

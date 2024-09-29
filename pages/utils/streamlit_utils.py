@@ -548,22 +548,22 @@ def sidebar():
         st.title("Navigation")
 
         st.page_link(page="pages/framework.py", label="Framework", icon="📐")
-        st.page_link(page="pages/benchmarks.py", label="Benchmarks", icon="📊")
-        st.page_link(page="pages/explain_qa.py", label="Explain Benchmark", icon="💬")
-        st.page_link(page="pages/vllm_tests.py", label="vLLM Tests", icon="⭐")
-        st.page_link(page="pages/initial_tests.py", label="Early Tests", icon="⏳")
+        st.page_link(page="pages/benchmarks.py", label="Arena Benchmarks", icon="📊")
+        st.page_link(page="pages/explain_qa.py", label="Explain Arena Benchmark", icon="💬")
+        st.page_link(page="pages/vllm_tests.py", label="Engine, Params & Tokens", icon="⭐")
+        # st.page_link(page="pages/initial_tests.py", label="Early Tests", icon="⏳")
 
         st.write("")
         st.divider()
         st.write("")
 
-        if st.session_state.curr_page == 'initial_tests':
-            st.info("""
-                    The tests on the selected page were performed during the initial 
-                    investigative phase of the research using a suboptimal setup.
-                    \n 
-                    If you want to review the latest tests, check out the vLLM Tests page.
-                    """)
+        # if st.session_state.curr_page == 'initial_tests':
+        #     st.info("""
+        #             The tests on the selected page were performed during the initial 
+        #             investigative phase of the research using a suboptimal setup.
+        #             \n 
+        #             If you want to review the latest tests, check out the vLLM Tests page.
+        #             """)
 
 
 if __name__ == "__main__":
