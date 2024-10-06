@@ -5,6 +5,9 @@ import altair as alt
 import os
 import sys
 import json
+import pytz
+from pytz import timezone
+from datetime import timedelta
 
 
 from sklearn.preprocessing import PolynomialFeatures
@@ -66,6 +69,39 @@ def load_parquet_data(type='results'):
 
     df = pd.read_parquet(f'results/data/{type}.parquet')
 
+    return df
+
+
+@st.cache_data
+def load_data(file_path):
+    """Loads data from a Parquet file and caches the result. Function used by the electricitymaps.py page."""
+    return pd.read_parquet(file_path)
+
+
+
+# Function to convert UTC to local time for each region
+def convert_to_local_time(df, region):
+    """Converts the Datetime (UTC) column to the local time for the selected region."""
+
+    # Dictionary to map regions to their respective time zones
+    region_time_zones = {
+        "US-West": "America/Los_Angeles",
+        "US-Central": "America/Chicago",
+        "US-East": "America/New_York",
+        "Germany": "Europe/Berlin",
+        "US-Average": "America/Denver",  # Assigning US-Central time zone to US Average
+        'Switzerland': 'Europe/Zurich',   
+        'France': 'Europe/Paris',        
+        'Iceland': 'Atlantic/Reykjavik',  
+        'Norway': 'Europe/Oslo',        
+        'Sweden': 'Europe/Stockholm'      
+    }
+
+    if region in region_time_zones:
+        tz = timezone(region_time_zones[region])
+        df['Datetime (Local)'] = df['Datetime (UTC)'].dt.tz_localize('UTC').dt.tz_convert(tz)
+    else:
+        df['Datetime (Local)'] = df['Datetime (UTC)']
     return df
 
 
@@ -551,6 +587,7 @@ def sidebar():
         st.page_link(page="pages/benchmarks.py", label="Arena Benchmarks", icon="📊")
         st.page_link(page="pages/explain_qa.py", label="Explain Arena Benchmark", icon="💬")
         st.page_link(page="pages/vllm_tests.py", label="Engine, Params & Tokens", icon="⭐")
+        st.page_link(page="pages/electricitymaps.py", label="ElectricityMaps", icon="🌍")
         # st.page_link(page="pages/initial_tests.py", label="Early Tests", icon="⏳")
 
         st.write("")

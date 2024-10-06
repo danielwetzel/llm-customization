@@ -20,7 +20,12 @@ region_time_zones = {
     "US-Central": "America/Chicago",
     "US-East": "America/New_York",
     "Germany": "Europe/Berlin",
-    "US-Average": "America/Denver"  # Assigning US-Central time zone to US Average
+    "US-Average": "America/Denver",  # Assigning US-Central time zone to US Average
+    'Switzerland': 'Europe/Zurich',   
+    'France': 'Europe/Paris',        
+    'Iceland': 'Atlantic/Reykjavik',  
+    'Norway': 'Europe/Oslo',        
+    'Sweden': 'Europe/Stockholm'      
 }
 
 # Function to convert UTC to local time for each region
@@ -38,6 +43,19 @@ def create_dashboard():
     """Creates the Streamlit dashboard using the loaded data."""
     
     st.title("Energy by Region Dashboard")
+
+    info, button = st.columns([8, 2], gap="large")
+
+    with info:
+        st.info("""
+        This data has been sourced from the ElectricityMaps API, specifically from their historical data portal. 
+        For a real-time visualization of live electricity data, use the 
+        [ElectricityMaps App](https://app.electricitymaps.com/).
+        """)
+    
+    with button:
+        st.link_button("🌍 ElectricityMaps App", "https://app.electricitymaps.com/", use_container_width=True)
+
     
     st.markdown("""
         **Description**: This dashboard visualizes energy data across different regions in the US and Germany.
@@ -46,7 +64,7 @@ def create_dashboard():
     """)
     
     # First Select Box: Daily or Hourly data
-    data_view = st.selectbox("Select Data View", options=["Daily", "Hourly"])
+    data_view = st.selectbox("Select Data View", options=["Hourly", "Daily"])
     
     # Second Select Box: Dynamic, based on the first selection
     if data_view == "Daily":
@@ -70,15 +88,10 @@ def create_dashboard():
         with date_col:
             date_range = st.date_input("Select Date Range", value=[earliest_date + timedelta(days=1), earliest_date + timedelta(days=8)], min_value=earliest_date, max_value=latest_date)
 
-    # Multi Select Box: Regions
-    regions = ["US-West", "US-Central", "US-East", "Germany"]  # Adjust regions as needed
-    selected_regions = st.multiselect("Select Regions", options=regions, default=regions)
-    
-    # Toggle Box: US Average
-    include_us_average = st.checkbox("Include US Average Data", value=True)
-    
-    if include_us_average:
-        selected_regions.append("US-Average")
+
+    regions = ["US-Average", "US-West", "US-Central", "US-East", "Germany", "Switzerland", "France", "Iceland", "Norway", "Sweden"]  # Adjust regions as needed
+    default = ["US-West", "US-East", "Germany", "Iceland", "Norway", "Sweden"] 
+    selected_regions = st.multiselect("Select Regions", options=regions, default=default)
     
     # Select Box for Metric Selection
     metric = st.selectbox("Select Metric", options=[
@@ -92,9 +105,9 @@ def create_dashboard():
     if data_view and selected_regions:
         # Load the correct file based on the data view and year
         if data_view == "Daily":
-            file_name = f"cleaned_data/all_regions_{selected_year}_daily.parquet"
+            file_name = f"../results/energy_data/cleaned_data/all_regions_{selected_year}_daily.parquet"
         else:
-            file_name = "cleaned_data/all_regions_2023_hourly.parquet"
+            file_name = "../results/energy_data/cleaned_data/all_regions_2023_hourly.parquet"
         
         # Load the data once the file path is determined
         data = load_data(file_name)
@@ -130,8 +143,28 @@ def create_dashboard():
 
         st.divider()
 
-        with st.expander("🔍 View Data", expanded=False):
-            st.dataframe(data_filtered)
+        with st.expander("🔍 Explain Metrics", expanded=False):
+            
+            st.write("")
+            st.write("")
+
+            st.markdown("""
+                **Carbon Intensity gCO₂eq/kWh (direct)**: 
+                This metric measures the amount of carbon dioxide equivalent (CO₂eq) emissions directly produced per kilowatt-hour of electricity generated. It focuses on the emissions from burning fossil fuels at power plants without considering upstream or downstream emissions. A lower value indicates cleaner energy production with less environmental impact.
+
+                **Carbon Intensity gCO₂eq/kWh (LCA)**: 
+                The Life Cycle Assessment (LCA) carbon intensity includes not only the direct emissions but also those generated during the entire lifecycle of energy production. This includes emissions from extracting raw materials, manufacturing, transportation, and disposal. LCA provides a more holistic view of the overall environmental impact of energy generation. A lower value means fewer emissions across the entire lifecycle.
+
+                **Low Carbon Percentage**: 
+                This percentage represents the share of energy produced from low-carbon sources, such as nuclear, hydro, wind, and solar. These sources emit minimal or no carbon dioxide directly during operation, helping to reduce overall carbon emissions. A higher percentage reflects a greater reliance on cleaner energy.
+
+                **Renewable Percentage**: 
+                The renewable percentage is the proportion of energy derived from renewable sources like wind, solar, geothermal, hydro, and biomass. Renewable energy is typically considered more sustainable since these resources are naturally replenished. A higher percentage suggests a greater shift towards sustainable energy production.
+            """)
+
+            st.write("")
+            st.write("")
+
 
 
 # Dictionary to convert month names to numbers for filtering

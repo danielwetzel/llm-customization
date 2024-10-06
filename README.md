@@ -97,7 +97,7 @@ Directory containing the data transformations of the historical [electricityMaps
 transform_energy_data.ipynb         ### Data Transformation of the electricityMaps Data
 data_visualization.py               ### Streamlit Data Visualization of the electricityMaps Data
 raw_data/                           ### Raw Data Directory
-cleaned_data/                       ### Cleaned Data Directory
+cleaned_data/                       ### Cleaned Data Directory  -> Moved to the results/ Directory
 ```
 
 

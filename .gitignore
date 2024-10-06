@@ -37,4 +37,4 @@ models/*
 notebooks/quantization/wandb/*
 notebooks/quantization/sparse_logs/*
 .DS_Store
-.DS_Store
+*.pyc

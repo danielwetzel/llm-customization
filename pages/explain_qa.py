@@ -374,17 +374,8 @@ def explain_qa():
     st.divider()
 
     df = load_parquet_data('bench_qa_deepdive')
-    
-    chat, elo = st.tabs([
-        "Arena Chats",
-        "Elo Calculations"
-        ])
-    
-    with chat:
-        st.write("")
-        st.write("")
 
-        show_chat(df)
+    show_chat(df)
     
 
 
