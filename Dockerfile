@@ -18,7 +18,6 @@ COPY streamlit-visualization.py requirements.txt ./
 COPY results/ ./results/
 COPY pages/ ./pages/
 COPY .streamlit/ ./.streamlit/
-COPY llm_judge/results/ ./llm_judge/results/
 
 RUN pip3 install -r requirements.txt
 
